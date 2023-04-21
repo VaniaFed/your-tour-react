@@ -4,15 +4,25 @@
 # Whitespace exclusions
 *.txt whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
 *.md whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.css whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.scss whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.sass whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
 *.js whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.jsx whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
 *.ts whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.tsx whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
 *.json whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
 
 # Treat these as text files with linefeed endings
 *.txt text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.sass text eol=lf
 *.md text eol=lf
 *.js text eol=lf
+*.jsx text eol=lf
 *.ts text eol=lf
+*.tsx text eol=lf
 *.json text eol=lf
 *.sh text eol=lf
 

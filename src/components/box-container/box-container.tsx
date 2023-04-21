@@ -8,3 +8,5 @@ export const BoxContainer = ({ children, className }: Props) => {
 	const cx = classNames.bind(styles);
 	return <div className={cx('box-container', className)}>{children}</div>;
 };
+
+console.log('lll');

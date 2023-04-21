@@ -1,8 +1,10 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 
+import { TypeLink } from 'types/';
+
 import { Links } from './links';
-import { Props, TypeLink } from './props';
+import { Props } from './props';
 
 export default {
 	title: 'Links',

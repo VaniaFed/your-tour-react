@@ -1,10 +1,6 @@
 @import 'utils/variables';
 @import 'utils/media';
 
-.header {
-	background: $color-white;
-}
-
 .header__nav {
 	display: flex;
 	align-items: center;
@@ -22,12 +18,10 @@
 }
 
 .header__logo {
-	display: flex;
-	width: 42px;
-	fill: $color-blue-300;
+	width: 181.84px;
 
 	@include media-tablet {
-		width: 36px;
+		width: 133px;
 	}
 }
 

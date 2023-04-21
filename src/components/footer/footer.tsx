@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 
 import { Paragraph } from 'components/paragraph';
 import { BoxContainer } from 'components/box-container';
-import { TypeLink } from 'components/links/props';
+import { TypeLink } from 'types/';
 import { Links } from 'components/links';
 
 import { Props } from './props';
@@ -37,7 +37,7 @@ export const Footer = ({ className }: Props) => {
 			<BoxContainer>
 				<div className={cx('footer__socials')}>
 					<Paragraph className={cx('footer__paragraph')}>Наши социальные сети</Paragraph>
-					<Links links={links} className={cx('footer__links')} color="white" />
+					<Links links={links} className={cx('footer__links')} activeColor="green" />
 				</div>
 			</BoxContainer>
 		</footer>

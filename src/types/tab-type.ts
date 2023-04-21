@@ -1,6 +1,4 @@
-import { FilterType } from './filter-type';
-
 export interface TabType {
-	text: FilterType;
+	text: string;
 	counter?: number;
 }

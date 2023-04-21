@@ -1,8 +1,8 @@
-import { TabType, FilterType } from 'types/';
+import { TabType } from 'types/';
 
 export type Props = {
 	items: TabType[];
-	filter: FilterType;
-	setFilter?: (value: FilterType) => void;
+	filter: string;
+	setFilter?: (value: string) => void;
 	className?: string;
 };

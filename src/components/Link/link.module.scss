@@ -26,29 +26,25 @@
 	&:hover::after {
 		background: $color-black;
 	}
+}
 
+.link_active_orange {
 	&:active {
-		color: $color-blue-300;
+		color: $color-orange-200;
 	}
 
 	&:active::after {
-		background: $color-blue-300;
+		background: $color-orange-200;
 	}
 }
 
-.link_active {
-	color: $color-blue-300;
-
-	::after {
-		content: '';
-		display: block;
-		width: 100%;
-		height: 1px;
-		background: $color-blue-300;
+.link_active_green {
+	&:active {
+		color: $color-green-400;
 	}
 
-	&:hover::after {
-		background: none;
+	&:active::after {
+		background-color: $color-green-400;
 	}
 }
 
@@ -117,6 +113,6 @@
 	}
 
 	&:active::after {
-		background: $color-blue-300;
+		background: $color-white;
 	}
 }

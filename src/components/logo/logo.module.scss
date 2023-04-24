@@ -1,0 +1,14 @@
+@import 'utils/variables';
+@import 'utils/media';
+
+.logo {
+	line-height: normal;
+}
+
+.logo__img {
+	width: 181.84px;
+
+	@include media-tablet {
+		width: 133px;
+	}
+}

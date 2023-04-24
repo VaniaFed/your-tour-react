@@ -11,7 +11,9 @@ export const Link = ({
 	iconType,
 	underline = true,
 	size,
+	color,
 	activeColor,
+	className,
 }: Props) => {
 	const cx = classNames.bind(styles);
 	const linkClass = cx(
@@ -19,7 +21,9 @@ export const Link = ({
 		iconType && [`link_${iconType}`],
 		underline && 'link_underline',
 		size && [`link_${size}`],
-		activeColor && [`link_active_${activeColor}`]
+		color && [`link_${color}`],
+		activeColor && [`link_active_${activeColor}`],
+		className
 	);
 	return (
 		<a href={href} target={target} className={linkClass}>

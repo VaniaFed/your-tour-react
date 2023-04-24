@@ -9,5 +9,6 @@ export type Props = {
 	target?: '_blank' | '_self' | '_parent' | '_top';
 	className?: string;
 	underline?: boolean;
+	color?: 'white';
 	activeColor?: 'orange' | 'green';
 };

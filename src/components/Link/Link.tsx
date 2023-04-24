@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,7 +6,7 @@ import styles from './link.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Link = ({
+export const Link: FC<Props> = ({
 	children,
 	level = 'p-normal',
 	color = 'black',
@@ -15,7 +15,7 @@ export const Link = ({
 	href = '#',
 	target = '_blank',
 	className,
-}: Props) => {
+}) => {
 	const linkClass = cx(
 		'link',
 		`link_level_${level}`,

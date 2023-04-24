@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './checkbox.module.scss';
 import { Paragraph } from 'components/paragraph';
 import { Props } from './props';
 
-export const Checkbox = ({ text, checked = false, onChange = () => {} }: Props) => {
+export const Checkbox: FC<Props> = ({ text, checked = false, onChange = () => {} }) => {
 	const cx = classNames.bind(styles);
 	const wrapperClassname = cx('checkbox');
 	const inputClassname = cx('checkbox__input');

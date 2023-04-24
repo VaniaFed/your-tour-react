@@ -5,7 +5,7 @@ import { Link } from './link';
 import { Props } from './props';
 
 export default {
-	title: 'Link/page',
+	title: 'Link',
 	component: Link,
 } as Meta;
 

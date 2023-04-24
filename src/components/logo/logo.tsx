@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
 import { Link } from 'components/link';
@@ -7,7 +7,7 @@ import { Props } from './props';
 import styles from './logo.module.scss';
 
 const cx = classNames.bind(styles);
-export const Logo = ({ className }: Props) => {
+export const Logo: FC<Props> = ({ className }) => {
 	return (
 		<Link href="#" underline={false} className={cx('logo', className)}>
 			<svg

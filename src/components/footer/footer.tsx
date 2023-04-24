@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
 import { Paragraph } from 'components/paragraph';
@@ -9,7 +9,7 @@ import { TypeLink } from 'types/';
 import { Props } from './props';
 import styles from './footer.module.scss';
 
-export const Footer = ({ className }: Props) => {
+export const Footer: FC<Props> = ({ className }) => {
 	const cx = classNames.bind(styles);
 
 	const links: TypeLink[] = [

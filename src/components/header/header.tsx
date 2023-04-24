@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/box-container';
@@ -30,7 +30,7 @@ const links: TypeLink[] = [
 ];
 
 const cx = classNames.bind(styles);
-export const Header = ({ className }: Props) => {
+export const Header: FC<Props> = ({ className }) => {
 	return (
 		<header className={cx('header', className)}>
 			<BoxContainer size="1168" className={cx('header__container')}>

@@ -5,13 +5,13 @@
 .input {
 	@include paragraph;
 	padding: 20px;
-	background: $color-blue-50;
-	border: 1px solid $color-blue-50;
+	background: $color-beige-100;
+	border: 1px solid $color-beige-200;
 	border-radius: 10px;
 	appearance: none;
 
 	&:hover {
-		background: $color-blue-50;
+		background: $color-beige-200;
 		cursor: pointer;
 	}
 

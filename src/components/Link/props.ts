@@ -2,13 +2,11 @@ import { IconType } from 'types/';
 
 export type Props = {
 	children: React.ReactNode;
-	href: string;
-	size?: 'regular' | 'small';
-	active?: boolean;
+	level?: 'h1' | 'h2' | 'h3' | 'p-big' | 'p-normal' | 'p-small';
 	iconType?: IconType;
+	color?: 'black' | 'white';
+	underline?: boolean;
+	href: string;
 	target?: '_blank' | '_self' | '_parent' | '_top';
 	className?: string;
-	underline?: boolean;
-	color?: 'white';
-	activeColor?: 'orange' | 'green';
 };

@@ -1,28 +1,27 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './link.module.scss';
 import { Props } from './props';
+import styles from './link.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Link = ({
 	children,
+	level = 'p-normal',
+	color = 'black',
+	underline = true,
+	iconType,
 	href = '#',
 	target = '_blank',
-	iconType,
-	underline = true,
-	size,
-	color,
-	activeColor,
 	className,
 }: Props) => {
-	const cx = classNames.bind(styles);
 	const linkClass = cx(
 		'link',
-		iconType && [`link_${iconType}`],
+		`link_level_${level}`,
+		color && [`link_color_${color}`],
 		underline && 'link_underline',
-		size && [`link_${size}`],
-		color && [`link_${color}`],
-		activeColor && [`link_active_${activeColor}`],
+		iconType && [`link_${iconType}`],
 		className
 	);
 	return (

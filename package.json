@@ -11,7 +11,7 @@
 		"lint:fix": "eslint . --fix",
 		"stylelint": "stylelint ./src",
 		"stylelint:fix": "stylelint ./src --fix",
-		"storybook": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
+		"storybook": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 -s src",
 		"build-storybook": "build-storybook"
 	},
 	"repository": {

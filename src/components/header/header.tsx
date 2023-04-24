@@ -39,12 +39,7 @@ export const Header = ({ className }: Props) => {
 					<ul className={cx('header__links')}>
 						{links.map((link, key) => (
 							<li key={key}>
-								<Link
-									href={link.href}
-									target="_blank"
-									active={link.isActive}
-									color="white"
-									iconType={link.iconType}>
+								<Link href={link.href} target="_blank" color="white">
 									{link.text}
 								</Link>
 							</li>

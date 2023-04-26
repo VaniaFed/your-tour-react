@@ -68,7 +68,7 @@ export const ChooseTour: FC<Props> = ({ className }) => {
 	return (
 		<BoxContainer className={className}>
 			<Section
-				headingText="Выбери свой тур"
+				heading="Выбери свой тур"
 				customSubtitle={<Tabs elements={tabs} value={tabs[0].text} className={cx('choose-tour__tabs')} />}>
 				<CardLayout itemsInRow="3" gap="30">
 					{cards.map((card, key) => (

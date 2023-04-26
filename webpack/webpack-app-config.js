@@ -7,9 +7,10 @@ const path = require('path');
 module.exports = {
 	output: {
 		path: path.resolve(__dirname, '../dist'),
+		publicPath: '/',
 		clean: true,
 		filename: '[name].js',
-		assetModuleFilename: 'assets/[name][ext]',
+		assetModuleFilename: 'static/[name][ext]',
 	},
 	plugins: [
 		new MiniCssExtractPlugin({

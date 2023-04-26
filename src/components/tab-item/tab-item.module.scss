@@ -6,10 +6,10 @@
 	@include paragraph_size_big;
 	height: 28px;
 	padding: 0;
-	color: inherit;
+	border: none;
 	background: none;
 	font-family: Roboto, Arial, sans-serif;
-	border: none;
+	color: inherit;
 	cursor: pointer;
 
 	@include media-mobile {

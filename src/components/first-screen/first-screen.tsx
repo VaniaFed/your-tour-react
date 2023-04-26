@@ -1,12 +1,14 @@
 import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
-import { Props } from './props';
-import styles from './first-screen.module.scss';
+import { BoxContainer } from 'components/box-container';
 import { Heading } from 'components/heading';
 import { Paragraph } from 'components/paragraph';
 import { Button } from 'components/button';
-import { BoxContainer } from 'components/box-container';
+
+import { Props } from './props';
+import styles from './first-screen.module.scss';
+
 const cx = classNames.bind(styles);
 
 export const FirstScreen: FC<Props> = ({ className }) => {

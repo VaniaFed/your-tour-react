@@ -6,7 +6,7 @@ import styles from './heading.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Heading: FC<Props> = ({ size = '1', children = 'Heading text', className }) => {
+export const Heading: FC<Props> = ({ children, size = '1', className }) => {
 	switch (size) {
 		case '1':
 			return <h1 className={cx('h1', className)}>{children}</h1>;

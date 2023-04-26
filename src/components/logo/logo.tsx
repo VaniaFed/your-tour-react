@@ -7,6 +7,7 @@ import { Props } from './props';
 import styles from './logo.module.scss';
 
 const cx = classNames.bind(styles);
+
 export const Logo: FC<Props> = ({ className }) => {
 	return (
 		<Link href="#" underline={false} className={cx('logo', className)}>

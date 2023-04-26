@@ -3,8 +3,8 @@ import classNames from 'classnames/bind';
 
 import { Paragraph } from 'components/paragraph';
 import { BoxContainer } from 'components/box-container';
-import { TypeLink } from 'types/';
 // import { Links } from 'components/row-layout';
+import { TypeLink } from 'types/';
 
 import { Props } from './props';
 import styles from './footer.module.scss';

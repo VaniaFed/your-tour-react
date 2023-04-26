@@ -1,19 +1,19 @@
 import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './tab-item.module.scss';
 import { Props } from './props';
+import styles from './tab-item.module.scss';
 
-export const TabItem: FC<Props> = ({ text, className, onClick = () => {} }) => {
-	const cx = classNames.bind(styles);
-	const resultClass = cx('tab-item', className);
+const cx = classNames.bind(styles);
+
+export const TabItem: FC<Props> = ({ label, className, onClick = () => {} }) => {
 	return (
 		<button
-			className={resultClass}
+			className={cx('tab-item', className)}
 			onClick={() => {
-				onClick(text);
+				onClick(label);
 			}}>
-			{text}
+			{label}
 		</button>
 	);
 };

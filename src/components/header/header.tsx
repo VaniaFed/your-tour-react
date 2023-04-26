@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import { BoxContainer } from 'components/box-container';
 import { Logo } from 'components/logo';
 import { Link } from 'components/link';
-
 import { TypeLink } from 'types/';
 
 import { Props } from './props';

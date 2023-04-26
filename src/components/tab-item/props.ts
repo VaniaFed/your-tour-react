@@ -1,5 +1,5 @@
 export type Props = {
-	text: string;
+	label: string;
 	className?: string;
 	onClick?: (arg: string) => void;
 };

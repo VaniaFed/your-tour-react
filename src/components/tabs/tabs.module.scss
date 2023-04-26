@@ -1,7 +1,8 @@
 @import 'utils/variables';
 @import 'utils/media';
 
-.tab {
+.tabs {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -13,18 +14,18 @@
 	}
 }
 
-.tab__item {
+.tabs__item {
 	position: relative;
 	display: flex;
 	height: 34px;
 	cursor: pointer;
 
-	&:not(.tab__item_active):hover::after {
+	&:not(.tabs__item_active):hover::after {
 		content: '';
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		display: block;
+		display: flex;
 		width: 100%;
 		height: 2px;
 		background: $color-black;
@@ -39,8 +40,8 @@
 	}
 }
 
-.tab__item_active {
-	color: $color-blue-300;
+.tabs__item_active {
+	color: $color-orange-200;
 
 	&::after {
 		content: '';
@@ -50,14 +51,14 @@
 		display: block;
 		width: 100%;
 		height: 2px;
-		background: $color-blue-300;
+		background: $color-orange-200;
 
 		@include media-mobile {
 			bottom: 0;
 		}
 	}
 
-	.tab__counter_active {
-		color: $color-blue-300;
+	.tabs__counter_active {
+		color: $color-orange-200;
 	}
 }

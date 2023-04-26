@@ -1,10 +1,30 @@
 import React, { FC } from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './section.module.scss';
-import { Props } from './props';
+import { Heading } from 'components/heading';
+import { Paragraph } from 'components/paragraph';
 
-export const Section: FC<Props> = ({ className }) => {
-	const cx = classNames.bind(styles);
-	return <div className={cx('section', className)}>section</div>;
+import { Props } from './props';
+import styles from './section.module.scss';
+
+const cx = classNames.bind(styles);
+
+export const Section: FC<Props> = ({
+	children,
+	headingText = '',
+	subTitleText = '',
+	customSubtitle,
+	className,
+	headingClassName,
+	contentClassName,
+}) => {
+	return (
+		<section className={cx('section', className)}>
+			<Heading size="2" className={cx('section__heading', headingClassName)}>
+				{headingText}
+			</Heading>
+			{customSubtitle || <Paragraph className={cx('section__subtitle')}>{subTitleText}</Paragraph>}
+			<div className={cx('section__content', contentClassName)}>{children}</div>
+		</section>
+	);
 };

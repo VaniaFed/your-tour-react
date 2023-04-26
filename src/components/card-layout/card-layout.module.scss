@@ -12,7 +12,7 @@
 .card-layout_items-in-row_2 {
 	grid-template-columns: 1fr 1fr;
 
-	@include media-mobile {
+	@include media-tablet {
 		grid-template-columns: 1fr;
 	}
 }

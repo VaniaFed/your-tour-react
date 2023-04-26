@@ -8,6 +8,7 @@ import classNames from 'classnames/bind';
 import { MainLayout } from 'components/main-layout';
 import { FirstScreen } from 'components/first-screen';
 import { ChooseTour } from 'components/choose-tour';
+import { Reviews } from 'components/reviews';
 
 const cx = classNames.bind(styles);
 export const App = () => {
@@ -15,8 +16,9 @@ export const App = () => {
 		<div className={cx('app')}>
 			<Header className={cx('app__header')} />
 			<MainLayout>
-				<FirstScreen></FirstScreen>
-				<ChooseTour></ChooseTour>
+				<FirstScreen />
+				<ChooseTour />
+				<Reviews />
 			</MainLayout>
 			<Footer className={cx('page__footer')} />
 		</div>

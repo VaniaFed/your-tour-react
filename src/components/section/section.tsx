@@ -11,8 +11,8 @@ const cx = classNames.bind(styles);
 
 export const Section: FC<Props> = ({
 	children,
-	headingText = '',
-	subTitleText = '',
+	heading = '',
+	subtitle = '',
 	customSubtitle,
 	className,
 	headingClassName,
@@ -21,9 +21,9 @@ export const Section: FC<Props> = ({
 	return (
 		<section className={cx('section', className)}>
 			<Heading size="2" className={cx('section__heading', headingClassName)}>
-				{headingText}
+				{heading}
 			</Heading>
-			{customSubtitle || <Paragraph className={cx('section__subtitle')}>{subTitleText}</Paragraph>}
+			{customSubtitle || <Paragraph className={cx('section__subtitle')}>{subtitle}</Paragraph>}
 			<div className={cx('section__content', contentClassName)}>{children}</div>
 		</section>
 	);

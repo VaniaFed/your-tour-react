@@ -1,7 +1,7 @@
 export type Props = {
 	children: React.ReactNode;
-	headingText: string;
-	subTitleText?: string;
+	heading: string;
+	subtitle?: string;
 	customSubtitle?: React.ReactNode;
 	className?: string;
 	headingClassName?: string;

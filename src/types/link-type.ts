@@ -1,9 +1,9 @@
-import { IconType } from 'types/';
+import { SocialsType } from 'types/';
 
 export type TypeLink = {
 	text: string;
 	href: string;
 	isActive?: boolean;
 	isIcon?: boolean;
-	iconType?: IconType;
+	iconType?: SocialsType;
 };

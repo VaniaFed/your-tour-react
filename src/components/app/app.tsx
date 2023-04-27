@@ -9,6 +9,7 @@ import { MainLayout } from 'components/main-layout';
 import { FirstScreen } from 'components/first-screen';
 import { ChooseTour } from 'components/choose-tour';
 import { Reviews } from 'components/reviews';
+import { Stories } from 'components/stories';
 
 const cx = classNames.bind(styles);
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
 				<FirstScreen />
 				<ChooseTour />
 				<Reviews />
+				<Stories />
 			</MainLayout>
 			<Footer className={cx('page__footer')} />
 		</div>

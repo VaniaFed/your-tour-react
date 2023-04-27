@@ -37,7 +37,7 @@ export const Footer: FC<Props> = ({ className }) => {
 			<BoxContainer>
 				<div className={cx('footer__socials')}>
 					<Paragraph className={cx('footer__paragraph')}>Наши социальные сети</Paragraph>
-					{/* <Links links={links} className={cx('footer__links')} activeColor="green" /> */}
+					{/* <LinksLayout links={links} className={cx('footer__links')} activeColor="green">aaa</LinksLayout> */}
 				</div>
 			</BoxContainer>
 		</footer>

@@ -20,13 +20,6 @@
 }
 
 .header__links {
-	display: flex;
-	column-gap: 50px;
-
-	@include media-laptop {
-		column-gap: 30px;
-	}
-
 	@media (max-width: 820px) {
 		display: none;
 	}

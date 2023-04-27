@@ -7,7 +7,7 @@ export interface ICardTrip {
 }
 
 export interface ICardReview {
-	text: string;
+	text: string[];
 	tourName: string;
 	username: string;
 	avatarSrc: string;

@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const path = require('path');
 
@@ -41,6 +41,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, '../', 'src/', 'index.html'),
 			filename: 'index.html',
+		}),
+		new webpack.DefinePlugin({
+			'process.env.API_URL': JSON.stringify(path.resolve(__dirname, '..', 'src')),
 		}),
 	],
 	mode: 'development',

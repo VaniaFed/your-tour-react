@@ -22,6 +22,12 @@
 	padding-top: 207px;
 	padding-bottom: 119px;
 	text-align: center;
+
+	@include media-mobile {
+		gap: 40px;
+		padding-top: calc(52px + 88px);
+		padding-bottom: 52px;
+	}
 }
 
 .first-screen__heading {

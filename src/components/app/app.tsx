@@ -6,6 +6,7 @@ import { Header } from 'components/header';
 import { MainLayout } from 'components/main-layout';
 import { FirstScreen } from 'components/first-screen';
 import { ChooseTour } from 'components/choose-tour';
+import { BuildTour } from 'components/build-tour';
 import { Reviews } from 'components/reviews';
 import { Gallery } from 'components/gallery';
 import { Stories } from 'components/stories';
@@ -21,6 +22,7 @@ export const App = () => {
 			<MainLayout>
 				<FirstScreen />
 				<ChooseTour />
+				<BuildTour />
 				<Reviews />
 				<Gallery />
 				<Stories />

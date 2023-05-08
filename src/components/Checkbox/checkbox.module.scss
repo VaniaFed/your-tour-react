@@ -4,7 +4,7 @@
 
 .checkbox {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	column-gap: 19px;
 	cursor: pointer;
 
@@ -14,6 +14,11 @@
 
 	@include media-mobile {
 		column-gap: 10px;
+	}
+
+	&_invalid {
+		outline: 3px solid $color-red;
+		outline-offset: 4px;
 	}
 }
 
@@ -47,13 +52,4 @@
 			content: url(static/checkbox-mb.svg);
 		}
 	}
-}
-
-.fake-control_completed {
-	opacity: 0.35;
-}
-
-.text_completed {
-	opacity: 0.35;
-	text-decoration: line-through;
 }

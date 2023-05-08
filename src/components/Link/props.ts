@@ -1,4 +1,4 @@
-import { SocialsType } from 'types/';
+import { SocialsType } from 'types';
 
 export type Props = {
 	children: React.ReactNode;

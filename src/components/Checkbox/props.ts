@@ -1,7 +1,8 @@
 export type Props = {
-	text: string;
+	children: React.ReactNode;
 	checked?: boolean;
-	onChange?: (checked: boolean) => void;
 	textStyle?: any;
 	fakeControlStyle?: any;
+	isInvalid?: boolean;
+	onChange?: (checked: boolean) => void;
 };

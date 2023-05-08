@@ -22,14 +22,16 @@ export const CardLarge: FC<Props> = ({ heading, paragraph, imgSrc, listItems = [
 				<Paragraph className={cx('card-large__paragraph')}>{paragraph}</Paragraph>
 				{listItems.length > 0 && (
 					<ul className={cx('card-large__list')}>
-						{listItems.map((item: string) => (
-							<li className={cx('card-large__item')}>{item}</li>
+						{listItems.map((item: string, key) => (
+							<li className={cx('card-large__item')} key={key}>
+								{item}
+							</li>
 						))}
 					</ul>
 				)}
 			</div>
 			<div className={cx('card-large__bottom')}>
-				<Button type="more">Подробнее</Button>
+				<Button variant="more">Подробнее</Button>
 				{links.length > 0 && (
 					<LinksLayout className={cx('card-large__links')} gap="35">
 						{links.map((link, key) => (

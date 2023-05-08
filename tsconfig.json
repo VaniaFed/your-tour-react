@@ -22,7 +22,7 @@
 			"static": ["./src/static/"],
 			"sagas": ["./src/sagas/"],
 			"services": ["./src/services/"],
-			"types": ["./src/types/"],
+			"types/": ["./src/types/"],
 			"constants.ts": ["./src/constants.ts"]
 		}
 	},

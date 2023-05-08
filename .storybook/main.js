@@ -48,7 +48,7 @@ module.exports = {
 			sagas: path.resolve(__dirname, '../src/sagas/'),
 			lib: path.resolve(__dirname, '../src/lib/'),
 			services: path.resolve(__dirname, '../src/services/'),
-			types: path.resolve(__dirname, '../src/types/'),
+			'types/': path.resolve(__dirname, '../src/types/'),
 			'constants.ts': path.resolve(__dirname, '../src/constants.ts'),
 			'_vars.scss': path.resolve(__dirname, '../src/_vars.scss'),
 		};

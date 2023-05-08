@@ -1,0 +1,12 @@
+@import 'utils/variables';
+@import 'utils/media';
+
+.build-tour {
+	display: block;
+}
+
+.build-tour__content {
+	@include media-mobile {
+		margin-top: 40px;
+	}
+}

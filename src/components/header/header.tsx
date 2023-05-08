@@ -5,7 +5,7 @@ import { BoxContainer } from 'components/box-container';
 import { Logo } from 'components/logo';
 import { LinksLayout } from 'components/links-layout';
 import { Link } from 'components/link';
-import { TypeLink } from 'types/';
+import { TypeLink } from 'types';
 
 import { Props } from './props';
 import styles from './header.module.scss';

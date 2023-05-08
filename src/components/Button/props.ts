@@ -1,6 +1,9 @@
+import { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
+
 export type Props = {
-	type?: 'primary' | 'secondary' | 'more' | 'small';
-	children: React.ReactNode;
+	variant?: 'primary' | 'secondary' | 'more' | 'small';
+	type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
+	children: ReactNode;
 	className?: string;
-	onClick?: () => void;
+	onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };

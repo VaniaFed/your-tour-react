@@ -21,7 +21,7 @@ export const FirstScreen: FC<Props> = ({ className }) => {
 				<Paragraph className={cx('first-screen__paragraph')}>
 					Идейные соображения высшего порядка, а также рамки и место обучения кадров
 				</Paragraph>
-				<Button type="small">Найти тур</Button>
+				<Button variant="small">Найти тур</Button>
 			</BoxContainer>
 		</section>
 	);

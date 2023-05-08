@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,24 +6,30 @@ import styles from './input.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Input: FC<Props> = ({ value, placeholder, className, onEnter = () => {}, onBlur = () => {} }) => {
-	const resultClass = cx('input', className);
+export const Input: FC<Props> = ({
+	placeholder,
+	type = 'text',
+	value,
+	name,
+	isInvalid = true,
+	className,
+	onClick = () => {},
+	onChange = () => {},
+	onFocus = () => {},
+	onBlur = () => {},
+}) => {
 	return (
 		<input
-			type="text"
-			autoFocus
-			defaultValue={value}
-			className={resultClass}
+			value={value}
+			name={name}
+			id={name}
+			type={type}
 			placeholder={placeholder}
-			onKeyDown={(e) => {
-				if (e.key === 'Enter') {
-					onEnter(e.currentTarget.value);
-					e.currentTarget.value = '';
-				}
-			}}
-			onBlur={(e) => {
-				onBlur(e.currentTarget.value);
-				e.currentTarget.value = '';
-			}}></input>
+			className={cx('input', isInvalid && 'input_invalid', className)}
+			onClick={onClick}
+			onChange={onChange}
+			onFocus={onFocus}
+			onBlur={onBlur}
+		/>
 	);
 };

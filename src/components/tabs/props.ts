@@ -1,4 +1,4 @@
-import { TabType } from 'types/';
+import { TabType } from 'types';
 
 export type Props = {
 	elements: TabType[];

@@ -1,4 +1,4 @@
-import { TypeLink } from 'types/';
+import { TypeLink } from 'types';
 
 export type Props = {
 	heading: string;

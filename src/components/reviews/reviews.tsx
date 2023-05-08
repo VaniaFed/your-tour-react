@@ -4,7 +4,7 @@ import { BoxContainer } from 'components/box-container';
 import { Section } from 'components/section';
 import { CardLayout } from 'components/card-layout';
 import { CardReview } from 'components/card-review';
-import { ICardReview } from 'types/';
+import { ICardReview } from 'types';
 
 import { Props } from './props';
 
@@ -35,12 +35,13 @@ export const Reviews: FC<Props> = ({}) => {
 				heading="Отзывы наших путешественников"
 				subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров">
 				<CardLayout itemsInRow="2" gap="30">
-					{reviewCards.map((card) => (
+					{reviewCards.map((card, key) => (
 						<CardReview
 							text={card.text}
 							username={card.username}
 							tourName={card.tourName}
 							avatarSrc={card.avatarSrc}
+							key={key}
 						/>
 					))}
 				</CardLayout>

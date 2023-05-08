@@ -9,19 +9,24 @@ export default {
 	component: Checkbox,
 } as Meta;
 
-export const Unchecked: ComponentStory<typeof Checkbox> = (args: Props) => <Checkbox {...args} />;
+export const Unchecked: ComponentStory<typeof Checkbox> = (args: Props) => (
+	<Checkbox {...args}>
+		Нажимая кнопку, я принимаю условия
+		<a href="#">Лицензионного договора</a>
+	</Checkbox>
+);
 
 Unchecked.args = {
-	text: 'task name',
 	onChange: (checked: boolean) => {
 		console.log(checked);
+		(this as any).checked = !checked;
 	},
 };
 
 export const Checked: ComponentStory<typeof Checkbox> = (args: Props) => <Checkbox {...args} />;
 
 Checked.args = {
-	text: 'Checked',
+	children: 'Checked',
 	checked: true,
 	onChange: (checked: boolean) => {
 		console.log(checked);

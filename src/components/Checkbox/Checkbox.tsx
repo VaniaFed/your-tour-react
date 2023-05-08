@@ -1,25 +1,31 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 
-import { Paragraph } from 'components/paragraph';
-
 import { Props } from './props';
-import styles from './checkbox.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Checkbox: FC<Props> = ({ text, checked = false, onChange = () => {} }) => {
+import styles from './checkbox.module.scss';
+export const Checkbox: FC<Props> = ({ children, checked = false, isInvalid, onChange = () => {} }) => {
+	const [active, setActive] = useState(checked);
+
+	useEffect(() => {
+		setActive(checked);
+	}, [checked]);
+
 	return (
 		<label className={cx('checkbox')}>
 			<input
 				className={cx('checkbox__input')}
 				type="checkbox"
-				checked={checked}
+				checked={active}
 				onChange={({ target }) => {
+					setActive(!active);
 					onChange(target.checked);
-				}}></input>
-			<span className={cx('fake-control', checked && 'fake-control_completed')}></span>
-			<Paragraph className={checked && styles.text_completed}>{text}</Paragraph>
+				}}
+			/>
+			<span className={cx('fake-control', checked && 'fake-control_completed')} />
+			{children}
 		</label>
 	);
 };

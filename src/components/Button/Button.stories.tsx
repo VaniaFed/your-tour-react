@@ -17,9 +17,11 @@ export const Primary: ComponentStory<typeof Button> = (args: Props) => (
 	</Button>
 );
 export const Secondary: ComponentStory<typeof Button> = (args: Props) => (
-	<Button onClick={logging} type="secondary" {...args} />
+	<Button onClick={logging} variant="secondary" {...args} />
 );
-export const More: ComponentStory<typeof Button> = (args: Props) => <Button onClick={logging} type="more" {...args} />;
+export const More: ComponentStory<typeof Button> = (args: Props) => (
+	<Button onClick={logging} variant="more" {...args} />
+);
 export const Small: ComponentStory<typeof Button> = (args: Props) => (
-	<Button onClick={logging} type="small" {...args} />
+	<Button onClick={logging} variant="small" {...args} />
 );

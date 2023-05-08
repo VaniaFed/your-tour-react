@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta, ComponentStory } from '@storybook/react';
 
-import { Input } from './input';
 import { Props } from './props';
+import { Input } from './input';
 
 export default {
 	title: 'Input',
@@ -10,14 +10,6 @@ export default {
 } as Meta;
 
 export const Default: ComponentStory<typeof Input> = (args: Props) => <Input {...args} />;
-
 Default.args = {
-	placeholder: 'Почитать',
-};
-
-export const WithText: ComponentStory<typeof Input> = (args: Props) => <Input {...args} />;
-
-WithText.args = {
-	placeholder: 'Почитать',
-	value: 'Hello world',
+	className: '',
 };

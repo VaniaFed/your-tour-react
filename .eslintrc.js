@@ -40,7 +40,7 @@ module.exports = {
 					['reducers', './src/reducers'],
 					['constants.ts', './src/constants.ts'],
 					['selectors', './src/selectors'],
-					['types', './src/types'],
+					['types/', './src/types'],
 					['static', './src/static'],
 					['utils', './src/utils'],
 					['lib', './src/lib'],

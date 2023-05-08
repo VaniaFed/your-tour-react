@@ -5,7 +5,7 @@ import { BoxContainer } from 'components/box-container';
 import { Section } from 'components/section';
 import { CardLayout } from 'components/card-layout';
 import { CardLarge } from 'components/card-large';
-import { ICardStorie } from 'types/';
+import { ICardStorie } from 'types';
 
 import { Props } from './props';
 import styles from './stories.module.scss';

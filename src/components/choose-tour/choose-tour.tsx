@@ -6,7 +6,7 @@ import { Section } from 'components/section';
 import { Tabs } from 'components/tabs';
 import { CardSmall } from 'components/card-small';
 import { CardLayout } from 'components/card-layout';
-import { ICardTrip, TabType } from 'types/';
+import { ICardTrip, TabType } from 'types';
 
 import { Props } from './props';
 import styles from './choose-tour.module.scss';

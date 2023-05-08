@@ -12,8 +12,8 @@ const cx = classNames.bind(styles);
 export const CardReview: FC<Props> = ({ text, username, tourName, avatarSrc, className }) => {
 	return (
 		<div className={cx('card-review', className)}>
-			{text.map((paragraph) => (
-				<Paragraph size="big" className={cx('card-review__paragraph')}>
+			{text.map((paragraph, key) => (
+				<Paragraph size="big" className={cx('card-review__paragraph')} key={key}>
 					{paragraph}
 				</Paragraph>
 			))}

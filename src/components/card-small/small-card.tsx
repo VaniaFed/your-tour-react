@@ -23,7 +23,7 @@ export const CardSmall: FC<Props> = ({ heading, subtitle, imgSrc, className }) =
 				</Paragraph>
 			</div>
 			<div className={cx('card__bottom')}>
-				<Button type="more">Подробнее</Button>
+				<Button variant="more">Подробнее</Button>
 			</div>
 		</div>
 	);

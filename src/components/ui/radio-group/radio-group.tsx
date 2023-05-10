@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,7 +6,7 @@ import styles from './radio-group.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const RadioGroup: FC<Props> = ({ items = [], checked, name, isInvalid, className, onChange = () => {} }) => {
+export const RadioGroup = ({ items = [], checked, name, className, onChange = () => {} }: Props) => {
 	const [active, setActive] = useState(checked);
 
 	const handleChange = (value: string) => {

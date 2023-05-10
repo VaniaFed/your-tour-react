@@ -1,15 +1,16 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './card-review.module.scss';
-import { Props } from './props';
 import { Paragraph } from 'components/ui/paragraph';
 import { Heading } from 'components/ui/heading';
 import { Avatar } from 'components/ui/avatar';
 
+import styles from './card-review.module.scss';
+import { Props } from './props';
+
 const cx = classNames.bind(styles);
 
-export const CardReview: FC<Props> = ({ text, username, tourName, avatarSrc, className }) => {
+export const CardReview = ({ text, username, tourName, avatarSrc, className }: Props) => {
 	return (
 		<div className={cx('card-review', className)}>
 			{text.map((paragraph, key) => (

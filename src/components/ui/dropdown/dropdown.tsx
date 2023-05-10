@@ -1,16 +1,16 @@
-import React, { FC, useState, useEffect, useRef, memo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 
 import { Input } from 'components/ui/input';
-import { DropdownList } from './dropdown-list/';
 import chevron from 'static/ic-dropdown.svg';
 
+import { DropdownList } from './dropdown-list/';
 import { Props } from './props';
 import styles from './dropdown.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Dropdown: FC<Props> = ({
+export const Dropdown = ({
 	dropdownItems,
 	value = '',
 	name,
@@ -19,7 +19,7 @@ export const Dropdown: FC<Props> = ({
 	className,
 	onChange = () => {},
 	onBlur = () => {},
-}) => {
+}: Props) => {
 	const [active, setActive] = useState(value);
 	const [open, setOpen] = useState(false);
 

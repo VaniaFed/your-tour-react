@@ -1,8 +1,7 @@
-import React, { FC, forwardRef, memo } from 'react';
+import React, { forwardRef } from 'react';
 import classNames from 'classnames/bind';
 
 import { DropdownItem } from '../dropdown-item';
-
 import { Props } from './props';
 import styles from './dropdown-list.module.scss';
 

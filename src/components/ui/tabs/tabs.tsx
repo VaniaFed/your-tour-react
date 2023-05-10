@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -7,7 +7,7 @@ import { TabItem } from 'components/ui/tabs/tab-item';
 
 const cx = classNames.bind(styles);
 
-export const Tabs: FC<Props> = ({ elements, value, className, onChange = () => {} }) => {
+export const Tabs = ({ elements, value, className, onChange = () => {} }: Props) => {
 	const [tab, setTab] = useState(value);
 
 	return (

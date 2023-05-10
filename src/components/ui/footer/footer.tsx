@@ -1,15 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
-import { Paragraph } from 'components/ui/paragraph';
 import { BoxContainer } from 'components/layouts/box-container';
 // import { Links } from 'components/row-layout';
-import { TypeLink } from 'types';
+import { Paragraph } from 'components/ui/paragraph';
 
+import { TypeLink } from 'types';
 import { Props } from './props';
 import styles from './footer.module.scss';
 
-export const Footer: FC<Props> = ({ className }) => {
+export const Footer = ({ className }: Props) => {
 	const cx = classNames.bind(styles);
 
 	const links: TypeLink[] = [

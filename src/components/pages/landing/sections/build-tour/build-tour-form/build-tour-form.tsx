@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState, useEffect, FormEvent } from 'react';
+import React, { ChangeEvent, useState, useEffect, FormEvent } from 'react';
 import classNames from 'classnames/bind';
 import { Field } from 'components/ui/field';
 import { Button } from 'components/ui/button';
@@ -15,7 +15,7 @@ import styles from './build-tour-form.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const BuildTourForm: FC<Props> = ({ className, onSubmit = () => {} }) => {
+export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 	const [formData, setFormData] = useState(clearState);
 	const [isFormValid, setIsFormValid] = useState(true);
 	const [isSubmitted, setIsSubmitted] = useState(false);

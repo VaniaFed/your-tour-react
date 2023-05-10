@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
-import { TextareaProps } from './props';
+import { Props } from './props';
 import styles from './textarea.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Textarea: FC<TextareaProps> = ({
+export const Textarea = ({
 	placeholder,
 	value,
 	name,
@@ -14,7 +14,7 @@ export const Textarea: FC<TextareaProps> = ({
 	className,
 	onChange = () => {},
 	onBlur = () => {},
-}) => {
+}: Props) => {
 	return (
 		<textarea
 			placeholder={placeholder}

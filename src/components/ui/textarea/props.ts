@@ -1,6 +1,6 @@
 import { ChangeEvent, FocusEvent } from 'react';
 
-export type TextareaProps = {
+export type Props = {
 	placeholder?: string;
 	value: string;
 	name: string;

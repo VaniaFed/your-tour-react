@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import { PageLayout } from 'components/layouts/page-layout';
 import { MainLayout } from 'components/layouts/main-layout';
@@ -9,7 +9,7 @@ import { Reviews } from './sections/reviews';
 import { Gallery } from './sections/gallery';
 import { Stories } from './sections/stories';
 
-export const Landing: FC<{}> = () => {
+export const Landing = () => {
 	return (
 		<PageLayout>
 			<MainLayout>

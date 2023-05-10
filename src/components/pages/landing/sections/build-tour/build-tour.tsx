@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './build-tour.module.scss';
@@ -10,7 +10,7 @@ import { IBuildTourFields } from 'components/pages/landing/sections/build-tour/b
 
 const cx = classNames.bind(styles);
 
-export const BuildTour: FC<Props> = ({ className }) => {
+export const BuildTour = ({ className }: Props) => {
 	const onSubmit = (formData: IBuildTourFields) => {
 		// push to server
 		console.log(formData);

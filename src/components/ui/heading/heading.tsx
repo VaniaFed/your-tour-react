@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,7 +6,7 @@ import styles from './heading.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Heading: FC<Props> = ({ children, size = '1', className }) => {
+export const Heading = ({ children, size = '1', className }: Props) => {
 	switch (size) {
 		case '1':
 			return <h1 className={cx('h1', className)}>{children}</h1>;

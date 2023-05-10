@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,7 +6,7 @@ import styles from './card-layout.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const CardLayout: FC<Props> = ({ children, itemsInRow = '1', gap = '50', className }) => {
+export const CardLayout = ({ children, itemsInRow = '1', gap = '50', className }: Props) => {
 	return (
 		<ul
 			className={cx(

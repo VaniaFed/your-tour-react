@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,7 +6,7 @@ import styles from './input.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Input: FC<Props> = ({
+export const Input = ({
 	placeholder,
 	type = 'text',
 	value,
@@ -17,7 +17,7 @@ export const Input: FC<Props> = ({
 	onChange = () => {},
 	onFocus = () => {},
 	onBlur = () => {},
-}) => {
+}: Props) => {
 	return (
 		<input
 			value={value}

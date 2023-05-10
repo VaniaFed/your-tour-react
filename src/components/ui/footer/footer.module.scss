@@ -10,12 +10,11 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 8px;
-	padding: 24px 4px;
-}
+	padding: 30px 1px;
 
-.footer__links {
-	display: flex;
-	column-gap: 61px;
+	@include media-tablet {
+		flex-direction: column;
+	}
 }
 
 .footer__paragraph {

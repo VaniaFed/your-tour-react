@@ -1,6 +1,12 @@
 @import 'utils/variables';
 @import 'utils/media';
 
+.header_sticky {
+	position: fixed !important;
+	background: rgba(#f3efe8, 0.6);
+	backdrop-filter: blur(10px);
+}
+
 .header__nav {
 	display: flex;
 	align-items: center;

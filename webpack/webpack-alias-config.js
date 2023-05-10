@@ -5,6 +5,7 @@ module.exports = {
 		alias: {
 			components: path.resolve(__dirname, '../src/components/'),
 			containers: path.resolve(__dirname, '../src/containers/'),
+			hooks: path.resolve(__dirname, '../src/hooks/'),
 			src: path.resolve(__dirname, '../src/'),
 			static: path.resolve(__dirname, '../src/static/'),
 			actions: path.resolve(__dirname, '../src/actions'),

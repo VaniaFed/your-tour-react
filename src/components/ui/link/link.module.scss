@@ -113,14 +113,29 @@
 	}
 }
 
-.link_vk {
+@mixin link_icon {
 	position: relative;
-	left: 36px;
+	margin-left: 36px;
+
+	@include media-mobile {
+		margin-left: 25px;
+	}
+
+	&::before {
+		position: absolute;
+		left: -36px;
+
+		@include media-mobile {
+			left: -25px;
+		}
+	}
+}
+
+.link_vk {
+	@include link_icon;
 
 	&::before {
 		content: url('static/vk.svg');
-		position: absolute;
-		left: -36px;
 
 		@include media-mobile {
 			content: url('static/vk_mob.svg');
@@ -130,33 +145,25 @@
 }
 
 .link_inst {
-	position: relative;
-	left: 36px;
+	@include link_icon;
 
 	&::before {
 		content: url('static/inst.svg');
-		position: absolute;
-		left: -36px;
 
 		@include media-mobile {
 			content: url('static/inst_mob.svg');
-			left: -25px;
 		}
 	}
 }
 
 .link_fb {
-	position: relative;
-	left: 36px;
+	@include link_icon;
 
 	&::before {
 		content: url('static/fb.svg');
-		position: absolute;
-		left: -36px;
 
 		@include media-mobile {
 			content: url('static/fb_mob.svg');
-			left: -25px;
 		}
 	}
 }

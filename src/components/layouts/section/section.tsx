@@ -9,7 +9,7 @@ import styles from './section.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Section: FC<Props> = ({
+export const Section = ({
 	children,
 	heading = '',
 	subtitle = '',
@@ -17,7 +17,7 @@ export const Section: FC<Props> = ({
 	className,
 	headingClassName,
 	contentClassName,
-}) => {
+}: Props) => {
 	return (
 		<section className={cx('section', className)}>
 			<Heading size="2" className={cx('section__heading', headingClassName)}>

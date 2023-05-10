@@ -1,8 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { LinksLayout } from 'components/layouts/links-layout';
-
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
 import { Button } from 'components/ui/button';
@@ -13,7 +12,7 @@ import { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const CardLarge: FC<Props> = ({ heading, paragraph, imgSrc, listItems = [], links = [], className }) => {
+export const CardLarge = ({ heading, paragraph, imgSrc, listItems = [], links = [], className }: Props) => {
 	return (
 		<div className={cx('card-large', className)}>
 			<img src={require(`${process.env.API_URL}/static/${imgSrc}`)} className={cx('card-large__image')} />

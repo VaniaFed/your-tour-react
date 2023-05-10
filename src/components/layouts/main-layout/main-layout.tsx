@@ -6,6 +6,6 @@ import { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const MainLayout: FC<Props> = ({ children, className }) => {
+export const MainLayout = ({ children, className }: Props) => {
 	return <main className={cx('main-layout', className)}>{children}</main>;
 };

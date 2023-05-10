@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Heading } from 'components/ui/heading';
@@ -10,7 +10,7 @@ import styles from './card-small.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const CardSmall: FC<Props> = ({ heading, subtitle, imgSrc, className }) => {
+export const CardSmall = ({ heading, subtitle, imgSrc, className }: Props) => {
 	return (
 		<div className={cx('card', className)}>
 			<img className={cx('card__image')} src={require(`${process.env.API_URL}/static/${imgSrc}`)} alt={heading} />

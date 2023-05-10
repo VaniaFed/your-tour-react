@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
-import { Logo } from 'components/ui/logo';
 import { LinksLayout } from 'components/layouts/links-layout';
+import { Logo } from 'components/ui/logo';
 import { Link } from 'components/ui/link';
-import { TypeLink } from 'types';
 
+import { TypeLink } from 'types';
 import { Props } from './props';
 import styles from './header.module.scss';
 
@@ -30,7 +30,8 @@ const links: TypeLink[] = [
 ];
 
 const cx = classNames.bind(styles);
-export const Header: FC<Props> = ({ className }) => {
+
+export const Header = ({ className }: Props) => {
 	return (
 		<header className={cx('header', className)}>
 			<BoxContainer size="1168" className={cx('header__container')}>

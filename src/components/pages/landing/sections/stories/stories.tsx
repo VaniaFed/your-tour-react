@@ -1,75 +1,18 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
 import { Section } from 'components/layouts/section';
 import { CardLayout } from 'components/layouts/card-layout';
 import { CardLarge } from 'components/ui/card-large';
-import { ICardStorie } from 'types';
 
+import { storieCards } from './data';
 import { Props } from './props';
 import styles from './stories.module.scss';
 
 const cx = classNames.bind(styles);
 
-const storieCards: ICardStorie[] = [
-	{
-		name: 'Автостопом в\u00A0Стамбул',
-		text: 'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений:',
-		imgSrc: "Traveler's Stories/story photo-1.jpg",
-		advantages: ['вкусная еда', 'дешевый транспорт', 'красивый город.'],
-		socialLinks: [
-			{
-				text: 'instagram',
-				href: '#',
-			},
-			{
-				text: 'facebook',
-				href: '#',
-			},
-			{
-				text: 'YouTube',
-				href: '#',
-			},
-		],
-	},
-	{
-		name: 'Автостопом в\u00A0Стамбул',
-		text: 'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.',
-		imgSrc: "Traveler's Stories/story photo-2.jpg",
-		socialLinks: [
-			{
-				text: 'instagram',
-				href: '#',
-			},
-			{
-				text: 'ВКонтакте',
-				href: '#',
-			},
-		],
-	},
-	{
-		name: 'Автостопом в\u00A0Стамбул',
-		text: 'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.',
-		imgSrc: "Traveler's Stories/story photo-3.jpg",
-		socialLinks: [
-			{
-				text: 'instagram',
-				href: '#',
-			},
-			{
-				text: 'facebook',
-				href: '#',
-			},
-			{
-				text: 'ВКонтакте',
-				href: '#',
-			},
-		],
-	},
-];
-
-export const Stories: FC<Props> = ({ className }) => {
+export const Stories = ({ className }: Props) => {
 	return (
 		<BoxContainer className={cx('stories', className)}>
 			<Section

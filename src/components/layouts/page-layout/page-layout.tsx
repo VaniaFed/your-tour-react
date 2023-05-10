@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Header } from 'components/ui/header';
@@ -9,7 +9,7 @@ import styles from './page-layout.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const PageLayout: FC<Props> = ({ children }) => {
+export const PageLayout = ({ children }: Props) => {
 	return (
 		<>
 			<Header className={cx('page-layout__header')} />

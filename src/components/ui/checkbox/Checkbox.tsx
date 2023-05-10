@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,7 +6,7 @@ import { Props } from './props';
 const cx = classNames.bind(styles);
 
 import styles from './checkbox.module.scss';
-export const Checkbox: FC<Props> = ({ children, checked = false, isInvalid, onChange = () => {} }) => {
+export const Checkbox = ({ children, checked = false, onChange = () => {} }: Props) => {
 	const [active, setActive] = useState(checked);
 
 	useEffect(() => {

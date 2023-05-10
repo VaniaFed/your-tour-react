@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
@@ -11,7 +11,7 @@ import styles from './first-screen.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const FirstScreen: FC<Props> = ({ className }) => {
+export const FirstScreen = ({ className }: Props) => {
 	return (
 		<section className={cx('first-screen', className)}>
 			<BoxContainer className={cx('first-screen__content')}>

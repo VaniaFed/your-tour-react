@@ -6,7 +6,7 @@ import styles from './link.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Link: FC<Props> = ({
+export const Link = ({
 	children,
 	level = 'p-normal',
 	color = 'black',
@@ -15,7 +15,7 @@ export const Link: FC<Props> = ({
 	href = '#',
 	target = '_blank',
 	className,
-}) => {
+}: Props) => {
 	const linkClass = cx(
 		'link',
 		`link_level_${level}`,

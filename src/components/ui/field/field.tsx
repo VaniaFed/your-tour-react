@@ -1,15 +1,15 @@
-import React, { ReactElement, ChangeEvent, FC, useEffect, useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
-import { Props } from './props';
-import styles from './field.module.scss';
+import { Dropdown } from 'components/ui/dropdown';
 import { Textarea } from 'components/ui/textarea';
 import { Input } from 'components/ui/input';
-import { Dropdown } from 'components/ui/dropdown';
+import { Props } from './props';
+import styles from './field.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Field: FC<Props> = ({
+export const Field = ({
 	label,
 	placeholder,
 	type = 'text',
@@ -21,7 +21,7 @@ export const Field: FC<Props> = ({
 	children,
 	className,
 	onChange = () => {},
-}) => {
+}: Props) => {
 	const inputControl = (type === 'dropdown' && (
 		<Dropdown
 			dropdownItems={dropdownItems}

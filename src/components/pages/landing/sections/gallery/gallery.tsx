@@ -1,14 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Section } from 'components/layouts/section';
+
 import { images } from './data';
 import { Props } from './props';
 import styles from './gallery.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Gallery: FC<Props> = ({ className }) => {
+export const Gallery = ({ className }: Props) => {
 	return (
 		<Section
 			className={cx('gallery', className)}

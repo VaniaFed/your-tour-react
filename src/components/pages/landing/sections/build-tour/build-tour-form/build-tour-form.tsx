@@ -20,25 +20,26 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 	const [isFormValid, setIsFormValid] = useState(true);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
-	const onChangeInput = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
-		const { name, value } = e.target;
+	const updateInput = (name: keyof IBuildTourFields, value: string | boolean) => {
 		setFormData({
 			...formData,
 			[name]: {
 				value,
-				...validateField(name as keyof IBuildTourFields, value, formData),
+				...validateField(name, value as string, formData),
 			},
 		});
 	};
 
-	const onChangeCustom = (value: string | boolean, name: keyof IBuildTourFields) => {
-		setFormData({
-			...formData,
-			[name]: {
-				value,
-				...validateField(name, value as string & boolean, formData),
-			},
-		});
+	function onChangeInput(e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>): void {
+		const name = e.target.name as keyof IBuildTourFields;
+		const value =
+			e.target.type === 'checkbox' ? (e as ChangeEvent<HTMLInputElement>).target.checked : e.target.value;
+
+		updateInput(name, value);
+	}
+
+	const onChangeDropdown = (name: keyof IBuildTourFields, value: string | boolean) => {
+		updateInput(name, value);
 	};
 
 	const clearForm = () => {
@@ -91,7 +92,7 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 					isInvalid={!direction.isValid && !isFormValid}
 					errorText={direction.errorText}
 					className={cx('build-tour-form__field')}
-					onChange={(value: any) => onChangeCustom(value, 'direction')}
+					onChange={(value: any) => onChangeDropdown('direction', value)}
 				/>
 			</Row>
 			<Row>
@@ -160,17 +161,12 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 					isInvalid={!isAdult.isValid && !isFormValid}
 					errorText={isAdult.errorText}
 					className={cx('build-tour-form__radio')}>
-					<RadioGroup
-						items={radioItems}
-						checked={isAdult.value as string}
-						name="age"
-						onChange={(value) => onChangeCustom(value, 'isAdult')}
-					/>
+					<RadioGroup items={radioItems} value={isAdult.value} name="isAdult" onChange={onChangeInput} />
 				</Field>
 			</Row>
 			<Row>
 				<Field isInvalid={!isAgreed.isValid && !isFormValid} errorText={isAgreed.errorText}>
-					<Checkbox checked={isAgreed.value as any} onChange={(value) => onChangeCustom(value, 'isAgreed')}>
+					<Checkbox checked={isAgreed.value} onChange={onChangeInput} name="isAgreed">
 						<Paragraph size="small" className={cx('checkbox__paragraph')}>
 							Нажимая кнопку, я принимаю условия{'\u00A0'}
 							<Link href="#" level="p-small">

@@ -1,5 +1,5 @@
-interface IFieldState {
-	value: string;
+interface IFieldState<T = string> {
+	value: T;
 	isValid: boolean;
 	errorText: string;
 }
@@ -13,5 +13,5 @@ export interface IBuildTourFields {
 	dateTo: IFieldState;
 	comment: IFieldState;
 	isAdult: IFieldState;
-	isAgreed: IFieldState;
+	isAgreed: IFieldState<boolean>;
 }

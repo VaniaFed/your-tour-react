@@ -7,12 +7,13 @@ import chevron from 'static/ic-dropdown.svg';
 import { DropdownList } from './dropdown-list/';
 import { Props } from './props';
 import styles from './dropdown.module.scss';
+import { UseDropdown } from 'hooks/use-dropdown';
 
 const cx = classNames.bind(styles);
 
 export const Dropdown = ({
 	dropdownItems,
-	value = '',
+	value,
 	name,
 	placeholder,
 	isInvalid,
@@ -20,45 +21,14 @@ export const Dropdown = ({
 	onChange = () => {},
 	onBlur = () => {},
 }: Props) => {
-	const [active, setActive] = useState(value);
-	const [open, setOpen] = useState(false);
-
-	const openMenu = () => {
-		setOpen(true);
-	};
-
-	const closeMenu = () => {
-		setOpen(false);
-	};
-
-	const handleItemClick = (val: string) => {
-		setActive(val);
-		onChange(val);
-		closeMenu();
-	};
-
-	const menuRef = useRef<HTMLUListElement>(document.createElement('ul'));
-
-	useEffect(() => {
-		const handler = (e: MouseEvent) => {
-			if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-				closeMenu();
-			}
-		};
-
-		document.addEventListener('mousedown', handler);
-	}, []);
-
-	useEffect(() => {
-		setActive(value);
-	}, [value]);
+	const { isOpen, menuRef, openMenu, handleItemClick } = UseDropdown(onChange);
 
 	return (
 		<div className={cx('dropdown', className)}>
 			<div className={cx('dropdown__input-wrapper')}>
 				<Input
 					placeholder={placeholder}
-					value={active}
+					value={value}
 					type="text"
 					name={name}
 					isInvalid={isInvalid}
@@ -68,7 +38,7 @@ export const Dropdown = ({
 				/>
 				<img src={chevron} alt="open" className={cx('dropdown__chevron')} />
 			</div>
-			{open && <DropdownList items={dropdownItems} onClick={handleItemClick} ref={menuRef!} />}
+			{isOpen && <DropdownList items={dropdownItems} onClick={handleItemClick} ref={menuRef!} />}
 		</div>
 	);
 };

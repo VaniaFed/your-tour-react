@@ -16,19 +16,11 @@ export const Unchecked: ComponentStory<typeof Checkbox> = (args: Props) => (
 	</Checkbox>
 );
 
-Unchecked.args = {
-	onChange: (checked: boolean) => {
-		console.log(checked);
-		(this as any).checked = !checked;
-	},
-};
+Unchecked.args = {};
 
 export const Checked: ComponentStory<typeof Checkbox> = (args: Props) => <Checkbox {...args} />;
 
 Checked.args = {
 	children: 'Checked',
 	checked: true,
-	onChange: (checked: boolean) => {
-		console.log(checked);
-	},
 };

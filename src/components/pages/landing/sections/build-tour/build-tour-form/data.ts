@@ -96,7 +96,7 @@ export const clearState: IBuildTourFields = {
 		errorText: 'Необходимо, чтобы вы подтвердили, что вам 18 лет',
 	},
 	isAgreed: {
-		value: '',
+		value: false,
 		isValid: false,
 		errorText: 'Необходимо, чтобы вы приняли условия соглашения',
 	},

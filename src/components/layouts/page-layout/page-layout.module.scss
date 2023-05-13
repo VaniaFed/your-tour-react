@@ -13,6 +13,10 @@
 	}
 
 	&__footer {
-		margin-top: 60px;
+		margin-top: 135px;
+
+		@include media-mobile {
+			margin-top: 75px;
+		}
 	}
 }

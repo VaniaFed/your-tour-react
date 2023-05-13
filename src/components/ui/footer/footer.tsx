@@ -2,12 +2,13 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
-// import { Links } from 'components/row-layout';
+import { LinksLayout } from 'components/layouts/links-layout';
 import { Paragraph } from 'components/ui/paragraph';
 
 import { TypeLink } from 'types';
 import { Props } from './props';
 import styles from './footer.module.scss';
+import { Link } from '../link';
 
 export const Footer = ({ className }: Props) => {
 	const cx = classNames.bind(styles);
@@ -16,19 +17,16 @@ export const Footer = ({ className }: Props) => {
 		{
 			text: 'instagram',
 			href: '#',
-			isIcon: true,
 			iconType: 'inst',
 		},
 		{
 			text: 'facebook',
 			href: '#',
-			isIcon: true,
 			iconType: 'fb',
 		},
 		{
 			text: 'vkontakte',
 			href: '#',
-			isIcon: true,
 			iconType: 'vk',
 		},
 	];
@@ -37,7 +35,15 @@ export const Footer = ({ className }: Props) => {
 			<BoxContainer>
 				<div className={cx('footer__socials')}>
 					<Paragraph className={cx('footer__paragraph')}>Наши социальные сети</Paragraph>
-					{/* <LinksLayout links={links} className={cx('footer__links')} activeColor="green">aaa</LinksLayout> */}
+					<LinksLayout className={cx('footer__links')} gap="25">
+						{links.map((link, key) => (
+							<li>
+								<Link href={link.href} iconType={link.iconType}>
+									{link.text}
+								</Link>
+							</li>
+						))}
+					</LinksLayout>
 				</div>
 			</BoxContainer>
 		</footer>

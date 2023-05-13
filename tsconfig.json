@@ -14,6 +14,7 @@
 			"src": ["./src/"],
 			"components": ["./src/components/"],
 			"containers": ["./src/containers/"],
+			"hooks": ["./src/hooks/"],
 			"actions": ["./src/actions/"],
 			"reducers": ["./src/reducers/"],
 			"selectors": ["./src/selectors/"],

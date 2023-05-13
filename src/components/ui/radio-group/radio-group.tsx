@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';
@@ -6,18 +6,7 @@ import styles from './radio-group.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const RadioGroup = ({ items = [], checked, name, className, onChange = () => {} }: Props) => {
-	const [active, setActive] = useState(checked);
-
-	const handleChange = (value: string) => {
-		setActive(value);
-		onChange(value);
-	};
-
-	useEffect(() => {
-		setActive(checked);
-	}, [checked]);
-
+export const RadioGroup = ({ items = [], value, name, className, onChange = () => {} }: Props) => {
 	return (
 		<div className={cx('radio-group', className)}>
 			{items.map((item, index) => (
@@ -25,9 +14,10 @@ export const RadioGroup = ({ items = [], checked, name, className, onChange = ()
 					<input
 						type="radio"
 						name={name}
-						checked={active === item.value}
+						value={item.value}
+						checked={value === item.value}
 						className={cx('radio__input')}
-						onChange={() => handleChange(item.value)}
+						onChange={onChange}
 					/>
 					<span className={cx('fake-control')}></span>
 					{item.label}

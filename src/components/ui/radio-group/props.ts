@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 export type RadioItemTypes = {
 	label: string;
 	value: string;
@@ -5,8 +7,8 @@ export type RadioItemTypes = {
 
 export type Props = {
 	items: RadioItemTypes[];
-	checked: string | null;
+	value: string | undefined;
 	name: string;
 	className?: string;
-	onChange?: (value: string) => void;
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };

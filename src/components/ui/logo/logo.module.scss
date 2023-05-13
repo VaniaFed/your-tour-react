@@ -3,6 +3,14 @@
 
 .logo {
 	line-height: normal;
+
+	&_black {
+		fill: $color-black;
+	}
+
+	&_white {
+		fill: $color-white;
+	}
 }
 
 .logo__img {

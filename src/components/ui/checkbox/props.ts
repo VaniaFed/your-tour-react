@@ -1,5 +1,8 @@
+import { ChangeEvent } from 'react';
+
 export type Props = {
 	children: React.ReactNode;
-	checked?: boolean;
-	onChange?: (checked: boolean) => void;
+	checked: boolean;
+	name: string;
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };

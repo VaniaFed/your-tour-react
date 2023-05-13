@@ -1,71 +1,25 @@
-import React, { ChangeEvent, useState, useEffect, FormEvent } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
-import { Field } from 'components/ui/field';
-import { Button } from 'components/ui/button';
-import { Checkbox } from 'components/ui/checkbox';
-import { Paragraph } from 'components/ui/paragraph';
-import { Link } from 'components/ui/link';
-import { RadioGroup } from 'components/ui/radio-group';
+
 import { Row } from './row';
-import { Props } from './props';
-import { IBuildTourFields } from './build-tour-fields-interface';
+import { Field } from 'components/ui/field';
+import { RadioGroup } from 'components/ui/radio-group';
+import { Checkbox } from 'components/ui/checkbox';
+import { Button } from 'components/ui/button';
+import { Link } from 'components/ui/link';
+import { Paragraph } from 'components/ui/paragraph';
+
+import { UseBuildTourForm } from './use-build-tour-form';
 import { clearState, dropdownItems, radioItems } from './data';
-import { checkIfFormValid, validateField } from './validation';
+import { Props } from './props';
 import styles from './build-tour-form.module.scss';
 
 const cx = classNames.bind(styles);
 
 export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
-	const [formData, setFormData] = useState(clearState);
-	const [isFormValid, setIsFormValid] = useState(true);
-	const [isSubmitted, setIsSubmitted] = useState(false);
-
-	const onChangeInput = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
-		const { name, value } = e.target;
-		setFormData({
-			...formData,
-			[name]: {
-				value,
-				...validateField(name as keyof IBuildTourFields, value, formData),
-			},
-		});
-	};
-
-	const onChangeCustom = (value: string | boolean, name: keyof IBuildTourFields) => {
-		setFormData({
-			...formData,
-			[name]: {
-				value,
-				...validateField(name, value as string & boolean, formData),
-			},
-		});
-	};
-
-	const clearForm = () => {
-		setFormData(clearState);
-		setIsFormValid(true);
-		setIsSubmitted(false);
-	};
-
-	const handleSubmit = (e: FormEvent) => {
-		e.preventDefault();
-		setIsFormValid(checkIfFormValid(formData));
-		setIsSubmitted(true);
-	};
-
-	const onClear = (e: React.MouseEvent<HTMLButtonElement>) => {
-		e.preventDefault();
-		clearForm();
-	};
-
+	const { formData, isFormValid, handlers } = UseBuildTourForm(clearState, onSubmit);
+	const { onChangeInput, onChangeDropdown, onSubmit: handleSubmit, onClear } = handlers;
 	const { name, direction, email, phone, dateFrom, dateTo, comment, isAdult, isAgreed } = formData;
-
-	useEffect(() => {
-		if (isSubmitted && isFormValid) {
-			onSubmit(formData);
-			clearForm();
-		}
-	}, [isSubmitted, isFormValid]);
 
 	return (
 		<form className={cx('build-tour-form', className)} onSubmit={handleSubmit}>
@@ -91,7 +45,7 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 					isInvalid={!direction.isValid && !isFormValid}
 					errorText={direction.errorText}
 					className={cx('build-tour-form__field')}
-					onChange={(value: any) => onChangeCustom(value, 'direction')}
+					onChange={(value: any) => onChangeDropdown('direction', value)}
 				/>
 			</Row>
 			<Row>
@@ -160,17 +114,12 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 					isInvalid={!isAdult.isValid && !isFormValid}
 					errorText={isAdult.errorText}
 					className={cx('build-tour-form__radio')}>
-					<RadioGroup
-						items={radioItems}
-						checked={isAdult.value as string}
-						name="age"
-						onChange={(value) => onChangeCustom(value, 'isAdult')}
-					/>
+					<RadioGroup items={radioItems} value={isAdult.value} name="isAdult" onChange={onChangeInput} />
 				</Field>
 			</Row>
 			<Row>
 				<Field isInvalid={!isAgreed.isValid && !isFormValid} errorText={isAgreed.errorText}>
-					<Checkbox checked={isAgreed.value as any} onChange={(value) => onChangeCustom(value, 'isAgreed')}>
+					<Checkbox checked={isAgreed.value} onChange={onChangeInput} name="isAgreed">
 						<Paragraph size="small" className={cx('checkbox__paragraph')}>
 							Нажимая кнопку, я принимаю условия{'\u00A0'}
 							<Link href="#" level="p-small">

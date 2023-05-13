@@ -16,6 +16,6 @@ Default.args = {
 		{ label: 'Да', value: 'да' },
 		{ label: 'Нет', value: 'нет' },
 	],
-	checked: 'да',
+	value: 'да',
 	name: 'age',
 };

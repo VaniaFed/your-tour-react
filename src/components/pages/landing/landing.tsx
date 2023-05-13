@@ -8,6 +8,7 @@ import { BuildTour } from './sections/build-tour';
 import { Reviews } from './sections/reviews';
 import { Gallery } from './sections/gallery';
 import { Stories } from './sections/stories';
+import { TravelWithUs } from './sections/travel-with-us';
 
 export const Landing = () => {
 	return (
@@ -19,6 +20,7 @@ export const Landing = () => {
 				<Reviews />
 				<Gallery />
 				<Stories />
+				<TravelWithUs />
 			</MainLayout>
 		</PageLayout>
 	);

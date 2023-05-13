@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, SyntheticEvent } from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
@@ -9,6 +9,7 @@ import { Link } from 'components/ui/link';
 import { TypeLink } from 'types';
 import { Props } from './props';
 import styles from './header.module.scss';
+import { UseSticky } from 'hooks/use-sticky';
 
 const links: TypeLink[] = [
 	{
@@ -32,21 +33,23 @@ const links: TypeLink[] = [
 const cx = classNames.bind(styles);
 
 export const Header = ({ className }: Props) => {
+	const { stickyRef, isSticky } = UseSticky(false, 200);
+
 	return (
-		<header className={cx('header', className)}>
+		<header className={cx('header', isSticky && 'header_sticky', className)} ref={stickyRef}>
 			<BoxContainer size="1168" className={cx('header__container')}>
 				<nav className={cx('header__nav')}>
-					<Logo />
+					<Logo color={isSticky ? 'black' : 'white'} />
 					<LinksLayout className={cx('header__links')} gap="50">
 						{links.map((link, key) => (
 							<li key={key}>
-								<Link href={link.href} target="_blank" color="white">
+								<Link href={link.href} target="_blank" color={isSticky ? 'black' : 'white'}>
 									{link.text}
 								</Link>
 							</li>
 						))}
 					</LinksLayout>
-					<Link href="tel:+7 999 999 99 99" color="white">
+					<Link href="tel:+7 999 999 99 99" color={isSticky ? 'black' : 'white'}>
 						+7 999 999 99 99
 					</Link>
 				</nav>

@@ -11,20 +11,24 @@ const cx = classNames.bind(styles);
 
 export const Section = ({
 	children,
-	heading = '',
-	subtitle = '',
+	heading,
+	subtitle,
 	customSubtitle,
 	className,
 	headingClassName,
 	contentClassName,
 }: Props) => {
+	const isSectionWithHeader = heading || subtitle || customSubtitle;
 	return (
 		<section className={cx('section', className)}>
-			<Heading size="2" className={cx('section__heading', headingClassName)}>
-				{heading}
-			</Heading>
-			{customSubtitle || <Paragraph className={cx('section__subtitle')}>{subtitle}</Paragraph>}
-			<div className={cx('section__content', contentClassName)}>{children}</div>
+			{heading && (
+				<Heading size="2" className={cx('section__heading', headingClassName)}>
+					{heading}
+				</Heading>
+			)}
+			{subtitle && <Paragraph className={cx('section__subtitle')}>{subtitle}</Paragraph>}
+			{customSubtitle}
+			<div className={cx(isSectionWithHeader && 'section__content', contentClassName)}>{children}</div>
 		</section>
 	);
 };

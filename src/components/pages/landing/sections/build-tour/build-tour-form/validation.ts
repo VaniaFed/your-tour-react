@@ -122,11 +122,11 @@ const validateIsAdult = (isAdult: string): [boolean, string] => {
 	return [isValid, errorText];
 };
 
-const validateIsAgreed = (isAgreed: string | boolean): [boolean, string] => {
+const validateIsAgreed = (isAgreed: boolean): [boolean, string] => {
 	let isValid = true;
 	let errorText = '';
 
-	if (isAgreed === 'false' || isAgreed === false) {
+	if (isAgreed === false) {
 		isValid = false;
 		errorText = 'Необходимо, чтобы вы приняли соглашение';
 	}
@@ -134,7 +134,7 @@ const validateIsAgreed = (isAgreed: string | boolean): [boolean, string] => {
 	return [isValid, errorText];
 };
 
-export const validateField = (field: keyof IBuildTourFields, value: string, formData: IBuildTourFields) => {
+export function validateField(field: keyof IBuildTourFields, value: string, formData: IBuildTourFields) {
 	let isValid = true;
 	let errorText = '';
 
@@ -168,7 +168,7 @@ export const validateField = (field: keyof IBuildTourFields, value: string, form
 			break;
 
 		case 'isAgreed':
-			[isValid, errorText] = validateIsAgreed(value);
+			[isValid, errorText] = validateIsAgreed(JSON.parse(value));
 			break;
 
 		default:
@@ -179,7 +179,7 @@ export const validateField = (field: keyof IBuildTourFields, value: string, form
 		isValid,
 		errorText,
 	};
-};
+}
 
 export const checkIfFormValid = (formData: IBuildTourFields) => {
 	return Object.entries(formData).every((item) => item[1].isValid === true);

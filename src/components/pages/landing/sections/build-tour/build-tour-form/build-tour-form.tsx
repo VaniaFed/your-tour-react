@@ -1,72 +1,25 @@
-import React, { ChangeEvent, useState, useEffect, FormEvent } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
-import { Field } from 'components/ui/field';
-import { Button } from 'components/ui/button';
-import { Checkbox } from 'components/ui/checkbox';
-import { Paragraph } from 'components/ui/paragraph';
-import { Link } from 'components/ui/link';
-import { RadioGroup } from 'components/ui/radio-group';
+
 import { Row } from './row';
-import { Props } from './props';
-import { IBuildTourFields } from './build-tour-fields-interface';
+import { Field } from 'components/ui/field';
+import { RadioGroup } from 'components/ui/radio-group';
+import { Checkbox } from 'components/ui/checkbox';
+import { Button } from 'components/ui/button';
+import { Link } from 'components/ui/link';
+import { Paragraph } from 'components/ui/paragraph';
+
+import { UseBuildTourForm } from './use-build-tour-form';
 import { clearState, dropdownItems, radioItems } from './data';
-import { checkIfFormValid, validateField } from './validation';
+import { Props } from './props';
 import styles from './build-tour-form.module.scss';
 
 const cx = classNames.bind(styles);
 
 export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
-	const [formData, setFormData] = useState(clearState);
-	const [isFormValid, setIsFormValid] = useState(true);
-	const [isSubmitted, setIsSubmitted] = useState(false);
-
-	const updateInput = (name: keyof IBuildTourFields, value: string | boolean) => {
-		setFormData({
-			...formData,
-			[name]: {
-				value,
-				...validateField(name, value as string, formData),
-			},
-		});
-	};
-
-	function onChangeInput(e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>): void {
-		const name = e.target.name as keyof IBuildTourFields;
-		const value =
-			e.target.type === 'checkbox' ? (e as ChangeEvent<HTMLInputElement>).target.checked : e.target.value;
-
-		updateInput(name, value);
-	}
-
-	const onChangeDropdown = (name: keyof IBuildTourFields, value: string | boolean) => {
-		updateInput(name, value);
-	};
-
-	const clearForm = () => {
-		setFormData(clearState);
-		setIsFormValid(true);
-		setIsSubmitted(false);
-	};
-
-	const handleSubmit = (e: FormEvent) => {
-		e.preventDefault();
-		setIsFormValid(checkIfFormValid(formData));
-		setIsSubmitted(true);
-	};
-
-	const onClear = (e: React.MouseEvent<HTMLButtonElement>) => {
-		e.preventDefault();
-		clearForm();
-	};
-
+	const { formData, isFormValid, handlers } = UseBuildTourForm(clearState, onSubmit);
+	const { onChangeInput, onChangeDropdown, onSubmit: handleSubmit, onClear } = handlers;
 	const { name, direction, email, phone, dateFrom, dateTo, comment, isAdult, isAgreed } = formData;
-
-	useEffect(() => {
-		if (isSubmitted && isFormValid) {
-			onSubmit(formData);
-			clearForm();
-		}
-	}, [isSubmitted, isFormValid]);
 
 	return (
 		<form className={cx('build-tour-form', className)} onSubmit={handleSubmit}>

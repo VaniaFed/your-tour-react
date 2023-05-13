@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const UseSticky = (defaultSticky = false, posY = 100) => {
 	const [isSticky, setIsSticky] = useState(defaultSticky);

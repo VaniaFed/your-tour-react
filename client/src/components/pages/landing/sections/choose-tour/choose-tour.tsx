@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
@@ -14,6 +14,17 @@ import styles from './choose-tour.module.scss';
 const cx = classNames.bind(styles);
 
 export const ChooseTour = ({ className }: Props) => {
+	const [data, setData] = React.useState(null);
+
+	fetch('/api')
+		.then((res) => res.json())
+		.then((data) => setData(data))
+		.catch((err) => console.error(err));
+
+	useEffect(() => {
+		console.log(data);
+	}, [data]);
+
 	return (
 		<BoxContainer className={className}>
 			<Section

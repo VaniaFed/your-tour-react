@@ -24,7 +24,7 @@ const validateDirection = (direction: string): [boolean, string] => {
 	if (typeof direction !== 'string') {
 		isValid = false;
 		errorText = 'Направление указано в неверном формате';
-	} else if (direction.length === 0) {
+	} else if (!!direction) {
 		isValid = false;
 		errorText = 'Выберите направление';
 	}
@@ -126,7 +126,7 @@ const validateIsAgreed = (isAgreed: boolean): [boolean, string] => {
 	let isValid = true;
 	let errorText = '';
 
-	if (isAgreed === false) {
+	if (!!isAgreed) {
 		isValid = false;
 		errorText = 'Необходимо, чтобы вы приняли соглашение';
 	}

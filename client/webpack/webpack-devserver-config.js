@@ -4,5 +4,6 @@ module.exports = {
 		open: true,
 		hot: true,
 		watchFiles: ['../src/*'],
+		proxy: { '/api/**': { target: 'http://localhost:3001', secure: false } },
 	},
 };

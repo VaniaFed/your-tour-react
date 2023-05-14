@@ -1,9 +1,9 @@
 import { ChangeEvent, FocusEvent, MouseEvent } from 'react';
-import { InputTypes } from 'types';
+import { InputType } from 'types';
 
 export type Props = {
 	placeholder?: string;
-	type: InputTypes;
+	type: InputType;
 	value: string;
 	name: string;
 	isInvalid?: boolean;

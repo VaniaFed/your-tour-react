@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, SyntheticEvent } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
@@ -6,12 +6,12 @@ import { LinksLayout } from 'components/layouts/links-layout';
 import { Logo } from 'components/ui/logo';
 import { Link } from 'components/ui/link';
 
-import { TypeLink } from 'types';
+import { Link as TLink } from 'types';
 import { Props } from './props';
 import styles from './header.module.scss';
 import { UseSticky } from 'hooks/use-sticky';
 
-const links: TypeLink[] = [
+const links: TLink[] = [
 	{
 		text: 'Туры',
 		href: '#',

@@ -4,16 +4,16 @@ import classNames from 'classnames/bind';
 import { BoxContainer } from 'components/layouts/box-container';
 import { LinksLayout } from 'components/layouts/links-layout';
 import { Paragraph } from 'components/ui/paragraph';
+import { Link } from '../link';
 
-import { TypeLink } from 'types';
+import { Link as TLink } from 'types';
 import { Props } from './props';
 import styles from './footer.module.scss';
-import { Link } from '../link';
 
 export const Footer = ({ className }: Props) => {
 	const cx = classNames.bind(styles);
 
-	const links: TypeLink[] = [
+	const links: TLink[] = [
 		{
 			text: 'instagram',
 			href: '#',

@@ -1,13 +1,13 @@
-import { ICardReview } from 'types';
+import { Review } from 'types';
 
-export const reviewCards: ICardReview[] = [
+export const reviewCards: Review[] = [
 	{
 		text: [
 			'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции позволяет оценить значение модели развития.',
 		],
 		username: 'Мария',
-		tourName: 'Вдали от дома',
-		avatarSrc: 'reviews/review photo-1.jpg',
+		tripName: 'Вдали от дома',
+		userAvatarSrc: 'reviews/review photo-1.jpg',
 	},
 	{
 		text: [
@@ -15,7 +15,7 @@ export const reviewCards: ICardReview[] = [
 			'Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает создание модели развития.',
 		],
 		username: 'Павел',
-		tourName: 'Путешествие в горы',
-		avatarSrc: 'reviews/review photo-2.jpg',
+		tripName: 'Путешествие в горы',
+		userAvatarSrc: 'reviews/review photo-2.jpg',
 	},
 ];

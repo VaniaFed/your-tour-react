@@ -1,6 +1,6 @@
-import { ICardTrip, TabType } from 'types';
+import { Tab } from 'types';
 
-export const tabs: TabType[] = [
+export const tabs: Tab[] = [
 	{
 		text: 'Популярные',
 	},
@@ -18,7 +18,7 @@ export const tabs: TabType[] = [
 	},
 ];
 
-export const tripCards: ICardTrip[] = [
+export const tripCards: any[] = [
 	{
 		name: 'Путешествие в\u00A0горы',
 		price: 'от 80 000 руб',

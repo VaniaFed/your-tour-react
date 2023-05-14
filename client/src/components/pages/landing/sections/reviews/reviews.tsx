@@ -20,8 +20,8 @@ export const Reviews = ({ className }: Props) => {
 						<CardReview
 							text={card.text}
 							username={card.username}
-							tourName={card.tourName}
-							avatarSrc={card.avatarSrc}
+							tourName={card.tripName}
+							avatarSrc={card.userAvatarSrc}
 							key={key}
 						/>
 					))}

@@ -1,10 +1,10 @@
-import { TypeLink } from 'types';
+import { Link } from 'types';
 
 export type Props = {
 	heading: string;
 	paragraph: string;
 	listItems?: string[];
 	imgSrc: string;
-	links?: TypeLink[];
+	links?: Link[];
 	className?: string;
 };

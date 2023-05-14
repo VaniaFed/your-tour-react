@@ -1,7 +1,7 @@
-import { TabType } from 'types';
+import { Tab } from 'types';
 
 export type Props = {
-	elements: TabType[];
+	elements: Tab[];
 	value?: string;
 	className?: string;
 	onChange?: (label: string) => void;

@@ -1,12 +1,12 @@
 import { ChangeEvent, ReactNode } from 'react';
-import { InputTypes, DropdownItemType } from 'types';
+import { DropdownItem, InputType } from 'types';
 
 export type Props = {
 	label?: string;
 	placeholder?: string;
-	type?: InputTypes;
+	type?: InputType;
 	value?: string | boolean;
-	dropdownItems?: DropdownItemType[];
+	dropdownItems?: DropdownItem[];
 	name?: string;
 	isInvalid?: boolean;
 	children?: ReactNode;

@@ -1,9 +1,9 @@
-import { SocialsType } from 'types';
+import { Social } from 'types';
 
 export type Props = {
 	children: React.ReactNode;
 	level?: 'h1' | 'h2' | 'h3' | 'p-big' | 'p-normal' | 'p-small';
-	iconType?: SocialsType;
+	iconType?: Social;
 	color?: 'black' | 'white';
 	underline?: boolean;
 	href: string;

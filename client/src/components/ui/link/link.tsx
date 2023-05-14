@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { Props } from './props';

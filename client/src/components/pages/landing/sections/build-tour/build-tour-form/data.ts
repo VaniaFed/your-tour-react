@@ -1,8 +1,8 @@
-import { DropdownItemType } from 'types';
+import { DropdownItem } from 'types';
 import { IBuildTourFields } from './build-tour-fields-interface';
 import { RadioItemTypes } from 'components/ui/radio-group/props';
 
-export const dropdownItems: DropdownItemType[] = [
+export const dropdownItems: DropdownItem[] = [
 	{
 		label: 'Аляска',
 		value: 'аляска',

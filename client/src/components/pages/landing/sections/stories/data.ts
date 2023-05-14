@@ -1,11 +1,11 @@
-import { ICardStorie } from 'types';
+import { Story } from 'types';
 
-export const storieCards: ICardStorie[] = [
+export const storyCards: Story[] = [
 	{
-		name: 'Автостопом в\u00A0Стамбул',
+		tripName: 'Автостопом в\u00A0Стамбул',
 		text: 'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений:',
 		imgSrc: "Traveler's Stories/story photo-1.jpg",
-		advantages: ['вкусная еда', 'дешевый транспорт', 'красивый город.'],
+		list: ['вкусная еда', 'дешевый транспорт', 'красивый город.'],
 		socialLinks: [
 			{
 				text: 'instagram',
@@ -22,7 +22,7 @@ export const storieCards: ICardStorie[] = [
 		],
 	},
 	{
-		name: 'Автостопом в\u00A0Стамбул',
+		tripName: 'Автостопом в\u00A0Стамбул',
 		text: 'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.',
 		imgSrc: "Traveler's Stories/story photo-2.jpg",
 		socialLinks: [
@@ -37,7 +37,7 @@ export const storieCards: ICardStorie[] = [
 		],
 	},
 	{
-		name: 'Автостопом в\u00A0Стамбул',
+		tripName: 'Автостопом в\u00A0Стамбул',
 		text: 'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.',
 		imgSrc: "Traveler's Stories/story photo-3.jpg",
 		socialLinks: [

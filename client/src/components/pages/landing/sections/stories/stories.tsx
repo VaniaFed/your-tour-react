@@ -6,7 +6,7 @@ import { Section } from 'components/layouts/section';
 import { CardLayout } from 'components/layouts/card-layout';
 import { CardLarge } from 'components/ui/card-large';
 
-import { storieCards } from './data';
+import { storyCards } from './data';
 import { Props } from './props';
 import styles from './stories.module.scss';
 
@@ -19,14 +19,14 @@ export const Stories = ({ className }: Props) => {
 				heading="Истории путешествий"
 				subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров">
 				<CardLayout>
-					{storieCards.map((storie, key) => (
+					{storyCards.map((story, key) => (
 						<li key={key}>
 							<CardLarge
-								heading={storie.name}
-								paragraph={storie.text}
-								imgSrc={storie.imgSrc}
-								listItems={storie.advantages}
-								links={storie.socialLinks}
+								heading={story.tripName}
+								paragraph={story.text}
+								imgSrc={story.imgSrc}
+								listItems={story.list}
+								links={story.socialLinks}
 							/>
 						</li>
 					))}

@@ -1,11 +1,19 @@
-const express = require('express');
-const app = express();
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const routes = require("./routes");
+// const { handleError } = require("./helpers/error-handler");
+require("dotenv").config();
+
 const port = 3001;
 
-app.get('/api', (req, res) => {
-	res.send('Hello World!');
-});
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/api", routes);
 
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
-});
+// app.use((err, req, res) => {
+// 	handleError(err, res);
+// });
+
+app.listen(port, () => console.log(`API running on http://localhost:${port}`));

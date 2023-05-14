@@ -13,7 +13,7 @@
     "stylelint:fix": "stylelint ./src --fix",
     "storybook": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 -s src",
     "build-storybook": "build-storybook",
-    "server:start": "node server/"
+    "server:start": "nodemon server/"
   },
   "repository": {
     "type": "git",
@@ -81,6 +81,7 @@
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "nodemon": "^2.0.22",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "postcss-preset-env": "^8.0.1",
@@ -107,8 +108,13 @@
     "@types/react-redux": "^7.1.25",
     "@types/redux-saga": "^0.10.5",
     "@types/uuid": "^9.0.1",
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
     "classnames": "^2.3.2",
+    "express": "^4.18.2",
     "graphql-tag": "^2.12.6",
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",

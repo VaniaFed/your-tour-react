@@ -1,8 +1,8 @@
 import { FocusEvent } from 'react';
-import { DropdownItemType } from 'types';
+import { DropdownItem } from 'types';
 
 export type Props = {
-	dropdownItems: DropdownItemType[];
+	dropdownItems: DropdownItem[];
 	value: string;
 	name: string;
 	placeholder?: string;

@@ -1,7 +1,7 @@
-import { DropdownItemType } from 'types';
+import { DropdownItem } from 'types/dropdown-item';
 
 export type Props = {
-	items: DropdownItemType[];
+	items: DropdownItem[];
 	className?: string;
 	onClick?: (val: string) => void;
 };

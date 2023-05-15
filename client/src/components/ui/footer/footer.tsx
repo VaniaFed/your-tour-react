@@ -37,7 +37,7 @@ export const Footer = ({ className }: Props) => {
 					<Paragraph className={cx('footer__paragraph')}>Наши социальные сети</Paragraph>
 					<LinksLayout className={cx('footer__links')} gap="25">
 						{links.map((link, key) => (
-							<li>
+							<li key={key}>
 								<Link href={link.href} iconType={link.iconType}>
 									{link.text}
 								</Link>

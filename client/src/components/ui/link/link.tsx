@@ -12,9 +12,8 @@ export const Link = ({
 	color = 'black',
 	underline = true,
 	iconType,
-	href = '#',
-	target = '_blank',
 	className,
+	...rest
 }: Props) => {
 	const linkClass = cx(
 		'link',
@@ -25,7 +24,7 @@ export const Link = ({
 		className
 	);
 	return (
-		<a href={href} target={target} className={linkClass}>
+		<a className={linkClass} {...rest}>
 			{children}
 		</a>
 	);

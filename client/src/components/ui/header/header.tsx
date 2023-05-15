@@ -14,19 +14,19 @@ import { UseSticky } from 'hooks/use-sticky';
 const links: TLink[] = [
 	{
 		text: 'Туры',
-		href: '#',
+		href: '#tours',
 	},
 	{
 		text: 'Создать тур',
-		href: '#',
+		href: '#build-tour',
 	},
 	{
 		text: 'Отзывы',
-		href: '#',
+		href: '#reviews',
 	},
 	{
 		text: 'Истории',
-		href: '#',
+		href: '#stories',
 	},
 ];
 
@@ -43,7 +43,7 @@ export const Header = ({ className }: Props) => {
 					<LinksLayout className={cx('header__links')} gap="50">
 						{links.map((link, key) => (
 							<li key={key}>
-								<Link href={link.href} target="_blank" color={isSticky ? 'black' : 'white'}>
+								<Link href={link.href} target="_self" color={isSticky ? 'black' : 'white'}>
 									{link.text}
 								</Link>
 							</li>

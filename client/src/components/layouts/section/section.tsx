@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { HTMLAttributes } from 'react';
 import classNames from 'classnames/bind';
 
 import { Heading } from 'components/ui/heading';
@@ -17,10 +17,12 @@ export const Section = ({
 	className,
 	headingClassName,
 	contentClassName,
-}: Props) => {
+	...rest
+}: Props & HTMLAttributes<HTMLElement>) => {
 	const isSectionWithHeader = heading || subtitle || customSubtitle;
+
 	return (
-		<section className={cx('section', className)}>
+		<section className={cx('section', className)} {...rest}>
 			{heading && (
 				<Heading size="2" className={cx('section__heading', headingClassName)}>
 					{heading}

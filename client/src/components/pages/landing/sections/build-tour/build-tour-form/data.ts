@@ -1,53 +1,5 @@
-import { DropdownItem } from 'types';
 import { IBuildTourFields } from './build-tour-fields-interface';
 import { RadioItemTypes } from 'components/ui/radio-group/props';
-
-export const dropdownItems: DropdownItem[] = [
-	{
-		label: 'Аляска',
-		value: 'аляска',
-	},
-	{
-		label: 'Аргентина',
-		value: 'аргентина',
-	},
-	{
-		label: 'Новая зеландия',
-		value: 'новая зеландия',
-	},
-	{
-		label: 'Турция',
-		value: 'турция',
-	},
-	{
-		label: 'Кипр',
-		value: 'кипр',
-	},
-	{
-		label: 'Тунис',
-		value: 'тунис',
-	},
-	{
-		label: 'Греция',
-		value: 'греция',
-	},
-	{
-		label: 'Таиланд',
-		value: 'таиланд',
-	},
-	{
-		label: 'Индия (гоа)',
-		value: 'индия (гоа)',
-	},
-	{
-		label: 'Чехия',
-		value: 'чехия',
-	},
-	{
-		label: 'ОАЭ',
-		value: 'оаэ',
-	},
-];
 
 export const radioItems: RadioItemTypes[] = [
 	{ label: 'Да', value: 'да' },

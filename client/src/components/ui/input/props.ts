@@ -1,15 +1,6 @@
-import { ChangeEvent, FocusEvent, MouseEvent } from 'react';
-import { InputType } from 'types';
+import { ComponentPropsWithoutRef } from 'react';
 
-export type Props = {
-	placeholder?: string;
-	type: InputType;
-	value: string;
-	name: string;
+export interface Props extends ComponentPropsWithoutRef<'input'> {
 	isInvalid?: boolean;
 	className?: string;
-	onClick?: (e: MouseEvent) => void;
-	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-	onFocus?: (e: FocusEvent) => void;
-	onBlur?: (e: FocusEvent) => void;
-};
+}

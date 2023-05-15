@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import { Row } from './row';
@@ -10,13 +10,16 @@ import { Link } from 'components/ui/link';
 import { Paragraph } from 'components/ui/paragraph';
 
 import { UseBuildTourForm } from './use-build-tour-form';
-import { clearState, dropdownItems, radioItems } from './data';
+import { clearState, radioItems } from './data';
 import { Props } from './props';
 import styles from './build-tour-form.module.scss';
+import { UseAxios } from 'hooks/use-axios';
+import { DropdownItem } from 'types';
 
 const cx = classNames.bind(styles);
 
 export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
+	const { data: dropdownItems } = UseAxios<DropdownItem[]>('/api/directions');
 	const { formData, isFormValid, handlers } = UseBuildTourForm(clearState, onSubmit);
 	const { onChangeInput, onChangeDropdown, onSubmit: handleSubmit, onClear } = handlers;
 	const { name, direction, email, phone, dateFrom, dateTo, comment, isAdult, isAgreed } = formData;

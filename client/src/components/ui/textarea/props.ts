@@ -1,11 +1,6 @@
-import { ChangeEvent, FocusEvent } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-export type Props = {
-	placeholder?: string;
-	value: string;
-	name: string;
+export interface Props extends ComponentPropsWithoutRef<'textarea'> {
 	isInvalid: boolean;
 	className?: string;
-	onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-	onBlur?: (e: FocusEvent) => void;
-};
+}

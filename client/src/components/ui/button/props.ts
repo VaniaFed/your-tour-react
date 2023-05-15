@@ -1,9 +1,7 @@
-import { ReactNode, MouseEvent, ButtonHTMLAttributes } from 'react';
+import { ReactNode, MouseEvent, ButtonHTMLAttributes, ComponentPropsWithoutRef } from 'react';
 
-export type Props = {
+export interface Props extends ComponentPropsWithoutRef<'button'> {
 	variant?: 'primary' | 'secondary' | 'more' | 'small';
-	type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
-	children: ReactNode;
 	className?: string;
 	onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
-};
+}

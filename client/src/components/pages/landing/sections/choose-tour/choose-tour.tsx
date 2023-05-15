@@ -17,17 +17,12 @@ const cx = classNames.bind(styles);
 export const ChooseTour = ({ className }: Props) => {
 	const defaultCategory = 'Популярные';
 	const [category, setCategory] = useState(defaultCategory);
-	// const { trips } = UseTripsByCategory(category);
 	const { trips } = getTripsByCategory(category);
-	// const { data: trips } = UseAxios<Trip[]>(`api/trips/${category}`);
-
-	useEffect(() => {
-		console.log(trips);
-	}, [trips]);
 
 	return (
 		<BoxContainer className={className}>
 			<Section
+				id="tours"
 				heading="Выбери свой тур"
 				customSubtitle={
 					<Tabs
@@ -39,7 +34,13 @@ export const ChooseTour = ({ className }: Props) => {
 				}>
 				<CardLayout itemsInRow="3" gap="30">
 					{trips?.map((card, key) => (
-						<CardSmall heading={card.name} subtitle={card.price} imgSrc={card.imgSrc} key={key} />
+						<CardSmall
+							heading={card.name}
+							subtitle={card.price}
+							imgSrc={card.imgSrc}
+							link={`trips/${card._id}`}
+							key={key}
+						/>
 					))}
 				</CardLayout>
 			</Section>

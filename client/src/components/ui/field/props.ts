@@ -8,6 +8,7 @@ export type Props = {
 	value?: string | boolean;
 	dropdownItems?: DropdownItem[];
 	name?: string;
+	id?: string;
 	isInvalid?: boolean;
 	children?: ReactNode;
 	errorText?: string;

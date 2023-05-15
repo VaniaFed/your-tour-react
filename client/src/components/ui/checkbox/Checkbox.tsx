@@ -6,16 +6,10 @@ import { Props } from './props';
 const cx = classNames.bind(styles);
 
 import styles from './checkbox.module.scss';
-export const Checkbox = ({ children, checked = false, name, onChange = () => {} }: Props) => {
+export const Checkbox = ({ children, checked, ...rest }: Props) => {
 	return (
 		<label className={cx('checkbox')}>
-			<input
-				className={cx('checkbox__input')}
-				type="checkbox"
-				checked={checked}
-				name={name}
-				onChange={onChange}
-			/>
+			<input className={cx('checkbox__input')} type="checkbox" {...rest} />
 			<span className={cx('fake-control', checked && 'fake-control_completed')} />
 			{children}
 		</label>

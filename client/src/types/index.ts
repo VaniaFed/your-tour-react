@@ -8,3 +8,4 @@ export { DropdownItem } from './dropdown-item';
 export { Tab } from './tab';
 export { Social } from './social';
 export { InputType } from './input-type';
+export { Image } from './image';

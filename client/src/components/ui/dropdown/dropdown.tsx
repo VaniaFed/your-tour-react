@@ -31,9 +31,11 @@ export const Dropdown = ({
 					value={value}
 					type="text"
 					name={name}
+					id={name}
 					isInvalid={isInvalid}
 					className={cx('dropdown__input')}
 					onClick={openMenu}
+					readOnly
 					onBlur={onBlur}
 				/>
 				<img src={chevron} alt="open" className={cx('dropdown__chevron')} />

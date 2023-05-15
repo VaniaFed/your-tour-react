@@ -11,15 +11,12 @@ import { IBuildTourFields } from 'components/pages/landing/sections/build-tour/b
 const cx = classNames.bind(styles);
 
 export const BuildTour = ({ className }: Props) => {
-	const onSubmit = (formData: IBuildTourFields) => {
-		// push to server
-		console.log(formData);
-		console.log('Submitted!');
-	};
+	const onSubmit = (formData: IBuildTourFields) => {};
 
 	return (
 		<BoxContainer className={cx('build-tour', className)}>
 			<Section
+				id="build-tour"
 				heading="Собери свой тур"
 				subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров"
 				contentClassName={cx('build-tour__content')}>

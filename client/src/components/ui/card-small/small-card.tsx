@@ -7,10 +7,11 @@ import { Button } from 'components/ui/button';
 
 import { Props } from './props';
 import styles from './card-small.module.scss';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-export const CardSmall = ({ heading, subtitle, imgSrc, className }: Props) => {
+export const CardSmall = ({ heading, subtitle, imgSrc, className, link = '#' }: Props) => {
 	return (
 		<div className={cx('card', className)}>
 			<img className={cx('card__image')} src={require(`${process.env.API_URL}/static/${imgSrc}`)} alt={heading} />
@@ -23,7 +24,9 @@ export const CardSmall = ({ heading, subtitle, imgSrc, className }: Props) => {
 				</Paragraph>
 			</div>
 			<div className={cx('card__bottom')}>
-				<Button variant="more">Подробнее</Button>
+				<Link to={link}>
+					<Button variant="more">Подробнее</Button>
+				</Link>
 			</div>
 		</div>
 	);

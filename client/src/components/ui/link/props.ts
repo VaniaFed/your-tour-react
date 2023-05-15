@@ -1,12 +1,10 @@
+import { ComponentPropsWithoutRef } from 'react';
 import { Social } from 'types';
 
-export type Props = {
-	children: React.ReactNode;
+export interface Props extends ComponentPropsWithoutRef<'a'> {
 	level?: 'h1' | 'h2' | 'h3' | 'p-big' | 'p-normal' | 'p-small';
 	iconType?: Social;
 	color?: 'black' | 'white';
 	underline?: boolean;
-	href: string;
-	target?: '_blank' | '_self' | '_parent' | '_top';
 	className?: string;
-};
+}

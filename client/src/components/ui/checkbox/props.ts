@@ -1,8 +1,5 @@
-import { ChangeEvent } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-export type Props = {
+export interface Props extends ComponentPropsWithoutRef<'input'> {
 	children: React.ReactNode;
-	checked: boolean;
-	name: string;
-	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-};
+}

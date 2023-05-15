@@ -37,6 +37,7 @@ export const Field = ({
 				placeholder={placeholder}
 				value={value as string}
 				name={name}
+				id={name}
 				isInvalid={isInvalid}
 				onChange={onChange}
 			/>
@@ -46,6 +47,7 @@ export const Field = ({
 				type={type}
 				value={value as string}
 				name={name}
+				id={name}
 				isInvalid={isInvalid}
 				onChange={onChange}
 				className={cx('field__input')}

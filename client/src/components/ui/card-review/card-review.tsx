@@ -13,11 +13,13 @@ const cx = classNames.bind(styles);
 export const CardReview = ({ text, username, tourName, avatarSrc, className }: Props) => {
 	return (
 		<div className={cx('card-review', className)}>
-			{text.map((paragraph, key) => (
-				<Paragraph size="big" className={cx('card-review__paragraph')} key={key}>
-					{paragraph}
-				</Paragraph>
-			))}
+			<ul>
+				{text.map((paragraph, key) => (
+					<Paragraph size="big" className={cx('card-review__paragraph')} key={key}>
+						{paragraph}
+					</Paragraph>
+				))}
+			</ul>
 			<div className={cx('card-review__bottom')}>
 				<div>
 					<Heading size="3">{username}</Heading>

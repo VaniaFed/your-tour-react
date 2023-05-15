@@ -45,7 +45,7 @@ const cards = [
 ];
 
 const cardList = cards.map((card) => (
-	<CardSmall heading={card.heading} subtitle={card.subtitle} imgSrc={card.imgSrc} />
+	<CardSmall heading={card.heading} subtitle={card.subtitle} imgSrc={card.imgSrc} link="#" />
 ));
 
 export const Default: ComponentStory<typeof CardLayout> = (args: Props) => <CardLayout {...args} />;

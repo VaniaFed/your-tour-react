@@ -13,6 +13,7 @@ export function UseAxios<T>(url: string) {
 				.then((res) => res.data)
 				.then((data) => setData(data));
 		} catch (error) {
+			console.error('AXIOS ERROR');
 			console.log(error);
 		} finally {
 			setLoading(false);

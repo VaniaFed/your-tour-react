@@ -19,7 +19,7 @@ export const Gallery = ({ className }: Props) => {
 			<ul className={cx('gallery__list')}>
 				{photos?.map((img, key) => (
 					<img
-						src={require(`${process.env.API_URL}/static/${img.src}`)}
+						src={require(`${process.env.STATIC_URL}/${img.src}`)}
 						alt={img.title}
 						className={cx('gallery__item')}
 						role="listitem"

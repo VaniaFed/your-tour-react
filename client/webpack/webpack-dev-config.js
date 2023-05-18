@@ -45,6 +45,9 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env.API_URL': JSON.stringify(path.resolve(__dirname, '..', 'src')),
 		}),
+		new webpack.DefinePlugin({
+			'process.env.STATIC_URL': JSON.stringify(path.resolve(__dirname, '..', 'src', 'static')),
+		}),
 	],
 	mode: 'development',
 };

@@ -1,23 +1,23 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
 import { Section } from 'components/layouts/section';
-
-import { Props } from './props';
-import styles from './travel-with-us.module.scss';
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
 import { Link } from 'components/ui/link';
 
+import { Props } from './props';
+import styles from './travel-with-us.module.scss';
+
 const cx = classNames.bind(styles);
 
-export const TravelWithUs: FC<Props> = ({ className }) => {
+export const TravelWithUs = ({}: Props) => {
 	return (
 		<BoxContainer>
 			<Section className={cx('travel-with-us')} contentClassName={cx('travel-with-us__content')}>
 				<img
-					src={require(`${process.env.API_URL}/static/Travel with us/footer photo.jpg`)}
+					src={require(`${process.env.STATIC_URL}/Travel with us/footer photo.jpg`)}
 					alt="Travel With us"
 					className={cx('travel-with-us__image')}
 				/>

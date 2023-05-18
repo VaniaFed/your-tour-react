@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 export const CardLarge = ({ heading, paragraph, imgSrc, listItems = [], links = [], className }: Props) => {
 	return (
 		<div className={cx('card-large', className)}>
-			<img src={require(`${process.env.API_URL}/static/${imgSrc}`)} className={cx('card-large__image')} />
+			<img src={require(`${process.env.STATIC_URL}/${imgSrc}`)} className={cx('card-large__image')} />
 			<div>
 				<Heading size="3" className={cx('card-large__heading')}>
 					{heading}

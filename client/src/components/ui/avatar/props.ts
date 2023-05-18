@@ -1,5 +1,3 @@
-export type Props = {
-	src: string;
-	alt?: string;
+export interface Props extends React.ComponentPropsWithoutRef<'img'> {
 	className?: string;
-};
+}

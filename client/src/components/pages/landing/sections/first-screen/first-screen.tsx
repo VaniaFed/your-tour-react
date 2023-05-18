@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import classNames from 'classnames/bind';
 
 import { BoxContainer } from 'components/layouts/box-container';
@@ -21,7 +22,9 @@ export const FirstScreen = ({ className }: Props) => {
 				<Paragraph className={cx('first-screen__paragraph')}>
 					Идейные соображения высшего порядка, а также рамки и место обучения кадров
 				</Paragraph>
-				<Button variant="small">Найти тур</Button>
+				<HashLink to="/#tours" smooth>
+					<Button variant="small">Найти тур</Button>
+				</HashLink>
 			</BoxContainer>
 		</section>
 	);

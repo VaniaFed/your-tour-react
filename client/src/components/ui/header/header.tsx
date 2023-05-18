@@ -14,19 +14,19 @@ import { UseSticky } from 'hooks/use-sticky';
 const links: TLink[] = [
 	{
 		text: 'Туры',
-		href: '#tours',
+		href: '/#tours',
 	},
 	{
 		text: 'Создать тур',
-		href: '#build-tour',
+		href: '/#build-tour',
 	},
 	{
 		text: 'Отзывы',
-		href: '#reviews',
+		href: '/#reviews',
 	},
 	{
 		text: 'Истории',
-		href: '#stories',
+		href: '/#stories',
 	},
 ];
 
@@ -39,11 +39,11 @@ export const Header = ({ className }: Props) => {
 		<header className={cx('header', isSticky && 'header_sticky', className)} ref={stickyRef}>
 			<BoxContainer size="1168" className={cx('header__container')}>
 				<nav className={cx('header__nav')}>
-					<Logo color={isSticky ? 'black' : 'white'} />
+					<Logo color={isSticky ? 'black' : 'white'} href="/#" />
 					<LinksLayout className={cx('header__links')} gap="50">
 						{links.map((link, key) => (
 							<li key={key}>
-								<Link href={link.href} target="_self" color={isSticky ? 'black' : 'white'}>
+								<Link href={link.href} smooth color={isSticky ? 'black' : 'white'}>
 									{link.text}
 								</Link>
 							</li>

@@ -16,17 +16,17 @@ export const Footer = ({ className }: Props) => {
 	const links: TLink[] = [
 		{
 			text: 'instagram',
-			href: '#',
+			href: 'https://www.instagram.com',
 			iconType: 'inst',
 		},
 		{
 			text: 'facebook',
-			href: '#',
+			href: 'https://www.facebook.com',
 			iconType: 'fb',
 		},
 		{
 			text: 'vkontakte',
-			href: '#',
+			href: 'https://www.vk.com',
 			iconType: 'vk',
 		},
 	];
@@ -38,7 +38,7 @@ export const Footer = ({ className }: Props) => {
 					<LinksLayout className={cx('footer__links')} gap="25">
 						{links.map((link, key) => (
 							<li key={key}>
-								<Link href={link.href} iconType={link.iconType}>
+								<Link href={link.href} isExternal target="_blank" iconType={link.iconType}>
 									{link.text}
 								</Link>
 							</li>

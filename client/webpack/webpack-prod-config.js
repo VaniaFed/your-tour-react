@@ -27,7 +27,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(jpe?g|png|webp|gif|svg|avif)$/i,
+				test: /\.(jpe?g|png|webp|gif|svg|avif|ico)$/i,
 				use: [
 					{
 						loader: 'image-webpack-loader',
@@ -65,6 +65,9 @@ module.exports = {
 		}),
 		new webpack.ids.DeterministicChunkIdsPlugin({
 			maxLength: 5,
+		}),
+		new webpack.DefinePlugin({
+			'process.env.API_URL': JSON.stringify(path.resolve(__dirname, '..', 'src')),
 		}),
 	],
 	mode: 'production',

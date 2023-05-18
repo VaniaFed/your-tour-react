@@ -6,9 +6,9 @@ import styles from './button.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Button = ({ children, variant = 'primary', type = 'button', className, onClick = () => {} }: Props) => {
+export const Button = ({ children, variant = 'primary', className, ...rest }: Props) => {
 	return (
-		<button type={type} className={cx('button', `button_${variant}`, className)} onClick={onClick}>
+		<button className={cx('button', `button_${variant}`, className)} {...rest}>
 			{children}
 		</button>
 	);

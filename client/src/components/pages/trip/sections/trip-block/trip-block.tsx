@@ -8,6 +8,7 @@ import { getTripById } from 'services/get-trip-by-id';
 import { invariant } from 'utils/invariant';
 import { Props } from './props';
 import styles from './trip-block.module.scss';
+import { BoxContainer } from 'components/layouts/box-container';
 
 const cx = classNames.bind(styles);
 
@@ -23,13 +24,15 @@ export const TripBlock = ({ className }: Props) => {
 	const { trip } = getTripById(tripId);
 
 	return (
-		<div className={cx('trip-block', className)}>
+		<>
 			{trip && (
-				<>
-					<Heading>{trip.name}</Heading>
+				<div className={cx('trip-block', className)}>
 					<img src={require(`${process.env.API_URL}/static/${trip.imgSrc}`)} alt={trip.name} />
-				</>
+					<BoxContainer>
+						<Heading>{trip.name}</Heading>
+					</BoxContainer>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };

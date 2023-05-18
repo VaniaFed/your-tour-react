@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { Dropdown } from 'components/ui/dropdown';
 import { Textarea } from 'components/ui/textarea';
 import { Input } from 'components/ui/input';
+
 import { Props } from './props';
 import styles from './field.module.scss';
 
@@ -57,7 +58,6 @@ export const Field = ({
 	const renderChildren = () => {
 		return React.Children.map(children, (child: any) => {
 			return React.cloneElement(child, {
-				isInvalid: isInvalid,
 				onChange: (val) => {
 					child.props.onChange(val);
 				},

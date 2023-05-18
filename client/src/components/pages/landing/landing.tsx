@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { PageLayout } from 'components/layouts/page-layout';
-import { MainLayout } from 'components/layouts/main-layout';
 import { FirstScreen } from './sections/first-screen';
 import { ChooseTour } from './sections/choose-tour';
 import { BuildTour } from './sections/build-tour';
@@ -12,16 +10,14 @@ import { TravelWithUs } from './sections/travel-with-us';
 
 export const Landing = () => {
 	return (
-		<PageLayout>
-			<MainLayout>
-				<FirstScreen />
-				<ChooseTour />
-				<BuildTour />
-				<Reviews />
-				<Gallery />
-				<Stories />
-				<TravelWithUs />
-			</MainLayout>
-		</PageLayout>
+		<>
+			<FirstScreen />
+			<ChooseTour />
+			<BuildTour />
+			<Reviews />
+			<Gallery />
+			<Stories />
+			<TravelWithUs />
+		</>
 	);
 };

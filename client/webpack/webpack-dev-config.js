@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
 	target: 'web',
-	devtool: false,
+	devtool: 'inline-source-map',
 	module: {
 		rules: [
 			{

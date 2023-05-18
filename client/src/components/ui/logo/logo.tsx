@@ -8,9 +8,9 @@ import styles from './logo.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Logo = ({ color = 'white', className }: Props) => {
+export const Logo = ({ color = 'white', className, ...rest }: Props) => {
 	return (
-		<Link href="#" underline={false} className={cx('logo', className)}>
+		<Link underline={false} className={cx('logo', className)} {...rest}>
 			<svg
 				className={cx('logo__img', `logo_${color}`)}
 				width="182"

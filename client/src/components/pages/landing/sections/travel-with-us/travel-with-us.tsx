@@ -25,7 +25,7 @@ export const TravelWithUs: FC<Props> = ({ className }) => {
 					<Heading size="3">Пора в путешествие вместе с нами!</Heading>
 					<Paragraph className={cx('travel-with-us__text')}>
 						Напиши на почту и узнай подробности на{' '}
-						<Link href="mailto:yourtour@gmail.com" target="_blank">
+						<Link href="mailto:yourtour@gmail.com" isExternal={true}>
 							yourtour@gmail.com
 						</Link>
 					</Paragraph>

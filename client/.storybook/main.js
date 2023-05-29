@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
 	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -13,33 +14,45 @@ module.exports = {
 			exclude: /node_modules/,
 			use: ['ts-loader'],
 		});
-		config.module.rules.push({
-			test: /\.scss$/i,
-			use: [
-				'style-loader',
-				{
-					loader: 'css-loader',
-					options: {
-						modules: true,
-						sourceMap: true,
-					},
-				},
-				{
-					loader: 'postcss-loader',
-					options: {
-						postcssOptions: {
-							plugins: [['postcss-preset-env']],
+		config.module.rules.push(
+			{
+				test: /\.scss$/i,
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							modules: true,
+							sourceMap: true,
 						},
 					},
-				},
-				'sass-loader',
-			],
-		});
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [['postcss-preset-env']],
+							},
+						},
+					},
+					'sass-loader',
+				],
+			},
+			{
+				test: /\.(jpe?g|png|webp|gif|svg|ico|avif)$/,
+				type: 'asset/resource',
+			}
+		);
+
+		config.plugins.push(
+			new webpack.DefinePlugin({
+				'process.env.STATIC_URL': JSON.stringify(path.resolve(__dirname, '..', 'src', 'static')),
+			})
+		);
 		config.resolve.alias = {
 			...config.resolve.alias,
-			components: path.resolve(__dirname, '../src/components/'),
-			containers: path.resolve(__dirname, '../src/containers/'),
 			src: path.resolve(__dirname, '../src/'),
+			components: path.resolve(__dirname, '../src/components/'),
+			hooks: path.resolve(__dirname, '../src/hooks/'),
 			static: path.resolve(__dirname, '../src/static/'),
 			actions: path.resolve(__dirname, '../src/actions'),
 			reducers: path.resolve(__dirname, '../src/reducers/'),

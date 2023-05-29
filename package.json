@@ -9,10 +9,10 @@
     "clear": "rd /s /q dist",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "stylelint": "stylelint ./src",
-    "stylelint:fix": "stylelint ./src --fix",
-    "storybook": "SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 -s src",
-    "build-storybook": "build-storybook",
+    "stylelint": "stylelint ./client/src",
+    "stylelint:fix": "stylelint ./client/src --fix",
+    "storybook": "start-storybook -p 6006 -c ./client/.storybook/",
+    "build-storybook": "build-storybook -c ./client/.storybook/",
     "server:start": "nodemon server/"
   },
   "repository": {

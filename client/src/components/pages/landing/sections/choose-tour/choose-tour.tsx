@@ -20,30 +20,24 @@ export const ChooseTour = ({ className }: Props) => {
 	const { trips } = getTripsByCategory(category);
 
 	return (
-		<BoxContainer className={className}>
-			<Section
-				id="tours"
-				heading="Выбери свой тур"
-				customSubtitle={
-					<Tabs
-						elements={tabs}
-						value={tabs[0].text}
-						className={cx('choose-tour__tabs')}
-						onChange={setCategory}
-					/>
-				}>
-				<CardLayout itemsInRow="3" gap="30">
-					{trips?.map((card, key) => (
+		<Section
+			id="tours"
+			heading="Выбери свой тур"
+			customSubtitle={
+				<Tabs elements={tabs} value={tabs[0].text} className={cx('choose-tour__tabs')} onChange={setCategory} />
+			}>
+			<CardLayout itemsInRow="3" gap="30">
+				{trips?.map((card, key) => (
+					<li key={key}>
 						<CardSmall
 							heading={card.name}
 							subtitle={card.price}
 							imgSrc={card.imgSrc}
 							link={`trips/${card._id}`}
-							key={key}
 						/>
-					))}
-				</CardLayout>
-			</Section>
-		</BoxContainer>
+					</li>
+				))}
+			</CardLayout>
+		</Section>
 	);
 };

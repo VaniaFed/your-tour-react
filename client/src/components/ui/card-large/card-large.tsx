@@ -15,7 +15,11 @@ const cx = classNames.bind(styles);
 export const CardLarge = ({ heading, paragraph, imgSrc, listItems = [], links = [], className }: Props) => {
 	return (
 		<div className={cx('card-large', className)}>
-			<img src={require(`${process.env.STATIC_URL}/${imgSrc}`)} className={cx('card-large__image')} />
+			<img
+				src={require(`${process.env.STATIC_URL}/${imgSrc}`)}
+				className={cx('card-large__image')}
+				alt={heading}
+			/>
 			<div>
 				<Heading size="3" className={cx('card-large__heading')}>
 					{heading}
@@ -33,7 +37,7 @@ export const CardLarge = ({ heading, paragraph, imgSrc, listItems = [], links = 
 			</div>
 			<div className={cx('card-large__bottom')}>
 				<Button variant="more">Подробнее</Button>
-				{links.length > 0 && (
+				{links.length && (
 					<LinksLayout className={cx('card-large__links')} gap="35">
 						{links.map((link, key) => (
 							<li key={key}>

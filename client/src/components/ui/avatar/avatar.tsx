@@ -7,5 +7,12 @@ import { Props } from './props';
 const cx = classNames.bind(styles);
 
 export const Avatar = ({ src, alt = 'Аватар', className, ...rest }: Props) => {
-	return <img src={require(`${process.env.STATIC_URL}/${src}`)} className={cx('avatar', className)} {...rest} />;
+	return (
+		<img
+			src={require(`${process.env.STATIC_URL}/${src}`)}
+			className={cx('avatar', className)}
+			alt={alt}
+			{...rest}
+		/>
+	);
 };

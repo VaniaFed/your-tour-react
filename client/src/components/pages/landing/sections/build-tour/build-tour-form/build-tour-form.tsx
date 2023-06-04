@@ -125,7 +125,7 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 					<Checkbox checked={isAgreed.value} onChange={onChangeInput} name="isAgreed">
 						<Paragraph size="small" className={cx('checkbox__paragraph')}>
 							Нажимая кнопку, я принимаю условия{'\u00A0'}
-							<Link href="#" level="p-small">
+							<Link href="#" level="p-small" isExternal target="_blank">
 								Лицензионного договора
 							</Link>
 						</Paragraph>

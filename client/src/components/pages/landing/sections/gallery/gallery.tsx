@@ -15,16 +15,18 @@ export const Gallery = ({ className }: Props) => {
 		<Section
 			className={cx('gallery', className)}
 			heading="Фотографии путешествий"
+			withContainer={false}
 			subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров">
 			<ul className={cx('gallery__list')}>
 				{photos?.map((img, key) => (
-					<img
-						src={require(`${process.env.STATIC_URL}/${img.src}`)}
-						alt={img.title}
-						className={cx('gallery__item')}
-						role="listitem"
-						key={key}
-					/>
+					<li className={cx('gallery__item')} key={key}>
+						<img
+							src={require(`${process.env.STATIC_URL}/${img.src}`)}
+							alt={img.title}
+							className={cx('gallery__pic')}
+							key={key}
+						/>
+					</li>
 				))}
 			</ul>
 		</Section>

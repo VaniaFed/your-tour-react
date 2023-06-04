@@ -11,7 +11,7 @@ export const Tabs = ({ elements, value, className, onChange = () => {} }: Props)
 	const [tab, setTab] = useState(value);
 
 	return (
-		<ul className={cx('tabs', className)}>
+		<menu className={cx('tabs', className)}>
 			{elements.map((tabItem, i) => (
 				<li className={cx('tabs__item', tabItem.text === tab && 'tabs__item_active')} key={i}>
 					<TabItem
@@ -23,6 +23,6 @@ export const Tabs = ({ elements, value, className, onChange = () => {} }: Props)
 					/>
 				</li>
 			))}
-		</ul>
+		</menu>
 	);
 };

@@ -1,0 +1,10 @@
+@import 'utils/variables';
+@import 'utils/media';
+
+.reviews {
+	display: block;
+
+	&__card {
+		height: 100%;
+	}
+}

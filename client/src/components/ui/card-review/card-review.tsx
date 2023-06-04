@@ -15,9 +15,11 @@ export const CardReview = ({ text, username, tourName, avatarSrc, className }: P
 		<div className={cx('card-review', className)}>
 			<ul>
 				{text.map((paragraph, key) => (
-					<Paragraph size="big" className={cx('card-review__paragraph')} key={key}>
-						{paragraph}
-					</Paragraph>
+					<li className={cx('card-review__paragraph-item')}>
+						<Paragraph size="big" key={key}>
+							{paragraph}
+						</Paragraph>
+					</li>
 				))}
 			</ul>
 			<div className={cx('card-review__bottom')}>

@@ -3,4 +3,14 @@
 
 .not-found {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 88px - 135px);
+	text-align: center;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
 }

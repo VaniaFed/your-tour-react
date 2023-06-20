@@ -12,22 +12,34 @@ module.exports = {
 	],
 	overrides: [
 		{
-			files: ['*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+			files: ['*.stories.@(ts|tsx)'],
 			rules: {
 				'storybook/hierarchy-separator': 'error',
 				'storybook/default-exports': 'off',
+				quotes: 'off',
 			},
 		},
 	],
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
+		tsconfigRootDir: __dirname,
+		project: 'tsconfig.json',
 	},
 	rules: {
-		'react/react-in-jsx-scope': 0,
-		quotes: ['error', 'single'],
 		indent: ['error', 'tab', { SwitchCase: 1 }],
+		quotes: ['error', 'single'],
+		'react/react-in-jsx-scope': 0,
 		'import/no-webpack-loader-syntax': 0,
+		'import/order': [
+			'error',
+			{
+				groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+				'newlines-between': 'always',
+			},
+		],
+		'@typescript-eslint/strict-boolean-expressions': 0,
+		'@typescript-eslint/no-var-requires': 0,
 	},
 	plugins: ['react'],
 	settings: {

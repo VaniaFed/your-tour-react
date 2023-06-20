@@ -1,25 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
-
-import { Row } from './row';
 import { Field } from 'components/ui/field';
 import { RadioGroup } from 'components/ui/radio-group';
 import { Checkbox } from 'components/ui/checkbox';
 import { Button } from 'components/ui/button';
 import { Link } from 'components/ui/link';
 import { Paragraph } from 'components/ui/paragraph';
+import { useAxios } from 'hooks/use-axios';
 
 import { UseBuildTourForm } from './use-build-tour-form';
 import { clearState, radioItems } from './data';
-import { Props } from './props';
 import styles from './build-tour-form.module.scss';
-import { UseAxios } from 'hooks/use-axios';
-import { DropdownItem } from 'types';
+import { Row } from './row';
+
+import type { FC } from 'react';
+import type { DropdownItem } from 'types';
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
-	const { data: dropdownItems } = UseAxios<DropdownItem[]>('/api/directions');
+export const BuildTourForm: FC<Props> = ({ className, onSubmit = () => {} }) => {
+	const { data: dropdownItems } = useAxios<DropdownItem[]>('/api/directions');
 	const { formData, isFormValid, handlers } = UseBuildTourForm(clearState, onSubmit);
 	const { onChangeInput, onChangeDropdown, onSubmit: handleSubmit, onClear } = handlers;
 	const { name, direction, email, phone, dateFrom, dateTo, comment, isAdult, isAgreed } = formData;
@@ -48,7 +49,9 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 					isInvalid={!direction.isValid && !isFormValid}
 					errorText={direction.errorText}
 					className={cx('build-tour-form__field')}
-					onChange={(value: any) => onChangeDropdown('direction', value)}
+					onChange={(value: any) => {
+						onChangeDropdown('direction', value);
+					}}
 				/>
 			</Row>
 			<Row>
@@ -125,7 +128,7 @@ export const BuildTourForm = ({ className, onSubmit = () => {} }: Props) => {
 					<Checkbox checked={isAgreed.value} onChange={onChangeInput} name="isAgreed">
 						<Paragraph size="small" className={cx('checkbox__paragraph')}>
 							Нажимая кнопку, я принимаю условия{'\u00A0'}
-							<Link href="#" level="p-small" isExternal target="_blank">
+							<Link href="#" level="p-small" isExternal>
 								Лицензионного договора
 							</Link>
 						</Paragraph>

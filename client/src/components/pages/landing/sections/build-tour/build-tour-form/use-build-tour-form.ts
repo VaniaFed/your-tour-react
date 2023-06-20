@@ -1,13 +1,14 @@
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import { IBuildTourFields } from './build-tour-fields-interface';
+import { useState, useEffect, type ChangeEvent, type FormEvent } from 'react';
+
+import { type BuildTourFields } from './build-tour-fields-interface';
 import { checkIfFormValid, validateField } from './validation';
 
-export const UseBuildTourForm = (clearState: IBuildTourFields, onSubmit: (data: IBuildTourFields) => void) => {
+export const UseBuildTourForm = (clearState: BuildTourFields, onSubmit: (data: BuildTourFields) => void) => {
 	const [formData, setFormData] = useState(clearState);
 	const [isFormValid, setIsFormValid] = useState(true);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
-	const updateInput = (name: keyof IBuildTourFields, value: string | boolean) => {
+	const updateInput = (name: keyof BuildTourFields, value: string | boolean) => {
 		setFormData({
 			...formData,
 			[name]: {
@@ -18,14 +19,14 @@ export const UseBuildTourForm = (clearState: IBuildTourFields, onSubmit: (data: 
 	};
 
 	function changeInput(e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>): void {
-		const name = e.target.name as keyof IBuildTourFields;
+		const name = e.target.name as keyof BuildTourFields;
 		const value =
 			e.target.type === 'checkbox' ? (e as ChangeEvent<HTMLInputElement>).target.checked : e.target.value;
 
 		updateInput(name, value);
 	}
 
-	const changeDropdown = (name: keyof IBuildTourFields, value: string) => {
+	const changeDropdown = (name: keyof BuildTourFields, value: string) => {
 		updateInput(name, value);
 	};
 

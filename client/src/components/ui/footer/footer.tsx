@@ -1,16 +1,18 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-
 import { BoxContainer } from 'components/layouts/box-container';
 import { LinksLayout } from 'components/layouts/links-layout';
 import { Paragraph } from 'components/ui/paragraph';
+
 import { Link } from '../link';
 
-import { Link as TLink } from 'types';
-import { Props } from './props';
 import styles from './footer.module.scss';
 
-export const Footer = ({ className }: Props) => {
+import type { FC } from 'react';
+import type { Link as TLink } from 'types';
+import type { Props } from './props';
+
+export const Footer: FC<Props> = ({ className }) => {
 	const cx = classNames.bind(styles);
 
 	const links: TLink[] = [
@@ -30,6 +32,7 @@ export const Footer = ({ className }: Props) => {
 			iconType: 'vk',
 		},
 	];
+
 	return (
 		<footer className={cx('footer', className)}>
 			<BoxContainer>
@@ -38,7 +41,7 @@ export const Footer = ({ className }: Props) => {
 					<LinksLayout className={cx('footer__links')} gap="25">
 						{links.map((link, key) => (
 							<li key={key}>
-								<Link href={link.href} isExternal target="_blank" iconType={link.iconType}>
+								<Link href={link.href} isExternal iconType={link.iconType}>
 									{link.text}
 								</Link>
 							</li>

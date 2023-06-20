@@ -1,17 +1,21 @@
 import React from 'react';
-import { Meta, ComponentStory } from '@storybook/react';
 
 import { Field } from './field';
-import { Props } from './props';
 
-export default {
+import type { Meta, ComponentStory } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'Field',
 	component: Field,
-} as Meta;
+};
+
+export default meta;
 
 export const Default: ComponentStory<typeof Field> = (args: Props) => <Field {...args} />;
 
 export const WithText: ComponentStory<typeof Field> = (args: Props) => <Field {...args} />;
+
 WithText.args = {
 	label: 'Имя (ФИО)',
 	name: 'name',
@@ -19,9 +23,10 @@ WithText.args = {
 };
 
 export const Invalid: ComponentStory<typeof Field> = (args: Props) => <Field {...args} />;
+
 Invalid.args = {
 	label: 'Имя (ФИО)',
-	value: 'dfsklfjsdklj fklsdjflkd sjfklsdklfd',
+	value: 'name name name',
 	name: 'name',
 	placeholder: 'Владилен Минин',
 	isInvalid: false,

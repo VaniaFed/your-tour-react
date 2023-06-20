@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
-import { Props } from './props';
 import styles from './tab-item.module.scss';
+
+import type { FC } from 'react';
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 

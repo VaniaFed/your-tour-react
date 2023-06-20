@@ -1,16 +1,18 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
-
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
 
-import { Props } from './props';
-import styles from './section.module.scss';
 import { BoxContainer } from '../box-container';
+
+import styles from './section.module.scss';
+
+import type { FC, HTMLAttributes } from 'react';
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const Section = ({
+export const Section: FC<Props & HTMLAttributes<HTMLElement>> = ({
 	children,
 	withContainer = true,
 	heading,
@@ -21,7 +23,7 @@ export const Section = ({
 	contentClassName,
 	...rest
 }: Props & HTMLAttributes<HTMLElement>) => {
-	const isSectionWithHeader = heading || subtitle || customSubtitle;
+	const isSectionWithHeader = heading ?? subtitle ?? customSubtitle;
 
 	const sectionElements = (
 		<>

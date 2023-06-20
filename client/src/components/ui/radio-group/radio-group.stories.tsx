@@ -1,13 +1,16 @@
 import React from 'react';
-import { Meta, ComponentStory } from '@storybook/react';
 
-import { Props } from './props';
 import { RadioGroup } from './radio-group';
 
-export default {
+import type { Meta, ComponentStory } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'RadioGroup',
 	component: RadioGroup,
-} as Meta;
+};
+
+export default meta;
 
 export const Default: ComponentStory<typeof RadioGroup> = (args: Props) => <RadioGroup {...args} />;
 Default.args = {

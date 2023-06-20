@@ -1,14 +1,10 @@
-import { ChangeEvent } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-export type RadioItemTypes = {
+export interface RadioItem {
 	label: string;
 	value: string;
-};
+}
 
-export type Props = {
-	items: RadioItemTypes[];
-	value: string | undefined;
-	name: string;
-	className?: string;
-	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-};
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
+	items: RadioItem[];
+}

@@ -1,19 +1,13 @@
 import React from 'react';
-import classNames from 'classnames/bind';
-
 import { Section } from 'components/layouts/section';
 import { CardLayout } from 'components/layouts/card-layout';
 import { CardLarge } from 'components/ui/card-large';
-
-import { Props } from './props';
-import styles from './stories.module.scss';
 import { getStories } from 'services/get-stories';
 
-const cx = classNames.bind(styles);
+import type { FC } from 'react';
 
-export const Stories = ({ className }: Props) => {
+export const Stories: FC<unknown> = () => {
 	const { stories } = getStories();
-
 	return (
 		<Section
 			id="stories"

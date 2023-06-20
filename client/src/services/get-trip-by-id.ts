@@ -1,7 +1,14 @@
-import { UseAxios } from 'hooks/use-axios';
-import { Trip } from 'types';
+import { useAxios } from 'hooks/use-axios';
 
-export const getTripById = (id: string) => {
-	const { data, loading } = UseAxios<Trip>(`/api/trip/${id}`);
-	return { trip: data, loading };
+import type { Trip } from 'types';
+
+export const getTripById = (
+	id: string
+): {
+	trip: Trip | undefined;
+	error: any;
+	loading: boolean;
+} => {
+	const { data, error, loading } = useAxios<Trip>(`/api/trip/${id}`);
+	return { trip: data, error, loading };
 };

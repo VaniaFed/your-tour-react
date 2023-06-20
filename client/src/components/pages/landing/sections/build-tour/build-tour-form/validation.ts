@@ -1,4 +1,4 @@
-import { IBuildTourFields } from './build-tour-fields-interface';
+import type { BuildTourFields } from './build-tour-fields-interface';
 
 const validateName = (name: string): [boolean, string] => {
 	let isValid = true;
@@ -42,7 +42,7 @@ const validateEmail = (email: string): [boolean, string] => {
 	} else if (email.length > 35) {
 		isValid = false;
 		errorText = 'Email слишком длинный';
-	} else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+	} else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
 		isValid = false;
 		errorText = 'Введите email в корректном формате';
 	}
@@ -135,7 +135,16 @@ const validateIsAgreed = (isAgreed: boolean): [boolean, string] => {
 	return [isValid, errorText];
 };
 
-export function validateField(field: keyof IBuildTourFields, value: string, formData: IBuildTourFields) {
+interface ValidationObject {
+	isValid: boolean;
+	errorText: string;
+}
+
+export function validateField(
+	field: keyof BuildTourFields,
+	value: string,
+	formData: BuildTourFields
+): ValidationObject {
 	let isValid = true;
 	let errorText = '';
 
@@ -182,6 +191,6 @@ export function validateField(field: keyof IBuildTourFields, value: string, form
 	};
 }
 
-export const checkIfFormValid = (formData: IBuildTourFields) => {
+export const checkIfFormValid = (formData: BuildTourFields): boolean => {
 	return Object.entries(formData).every((item) => item[1].isValid === true);
 };

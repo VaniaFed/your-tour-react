@@ -1,23 +1,32 @@
-import { useState } from 'react';
-import { UseClickOutside } from './use-click-outside';
+import { useState, type RefObject } from 'react';
 
-export const UseDropdown = (onItemClick: (val?: any) => void) => {
+import { useClickOutside } from './use-click-outside';
+
+export const useDropdown = (
+	onItemClick: (val?: any) => void
+): {
+	isOpen: boolean;
+	menuRef: RefObject<HTMLUListElement>;
+	openMenu: () => void;
+	closeMenu: () => void;
+	handleItemClick: (val: string) => void;
+} => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const openMenu = () => {
+	const openMenu = (): void => {
 		setIsOpen(true);
 	};
 
-	const closeMenu = () => {
+	const closeMenu = (): void => {
 		setIsOpen(false);
 	};
 
-	const handleItemClick = (val: string) => {
+	const handleItemClick = (val: string): void => {
 		onItemClick(val);
 		closeMenu();
 	};
 
-	const { ref: menuRef } = UseClickOutside<HTMLUListElement>(() => {
+	const { ref: menuRef } = useClickOutside<HTMLUListElement>(() => {
 		closeMenu();
 	});
 

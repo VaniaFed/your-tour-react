@@ -1,7 +1,11 @@
-import { UseAxios } from 'hooks/use-axios';
-import { Image } from 'types';
+import { useAxios } from 'hooks/use-axios';
 
-export const getUserPhotos = () => {
-	const { data, loading } = UseAxios<Image[]>(`/api/user-photos`);
+import type { Image } from 'types';
+
+export const getUserPhotos = (): {
+	photos: Image[] | undefined;
+	loading: boolean;
+} => {
+	const { data, loading } = useAxios<Image[]>('/api/user-photos');
 	return { photos: data, loading };
 };

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-
-import { Props } from './props';
-import styles from './tabs.module.scss';
 import { TabItem } from 'components/ui/tabs/tab-item';
+
+import styles from './tabs.module.scss';
+
+import type { FC } from 'react';
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const Tabs = ({ elements, value, className, onChange = () => {} }: Props) => {
+export const Tabs: FC<Props> = ({ elements, value, className, onChange = () => {} }) => {
 	const [tab, setTab] = useState(value);
-
 	return (
 		<menu className={cx('tabs', className)}>
 			{elements.map((tabItem, i) => (

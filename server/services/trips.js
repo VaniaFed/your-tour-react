@@ -13,8 +13,12 @@ const getTripsByCategory = async (req, res) => {
 
 const getTripById = async (req, res) => {
 	const { id } = req.params;
-	const trip = await tripModel.findById(id);
-	res.status(200).json(trip);
+	try {
+		const trip = await tripModel.findById(id);
+		res.status(200).json(trip);
+	} catch (err) {
+		res.status(404).json(err);
+	}
 };
 
 module.exports = {

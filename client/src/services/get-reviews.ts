@@ -1,7 +1,11 @@
-import { UseAxios } from 'hooks/use-axios';
-import { Review } from 'types';
+import { useAxios } from 'hooks/use-axios';
 
-export const getReviews = () => {
-	const { data, loading } = UseAxios<Review[]>(`/api/reviews`);
+import type { Review } from 'types';
+
+export const getReviews = (): {
+	reviews: Review[] | undefined;
+	loading: boolean;
+} => {
+	const { data, loading } = useAxios<Review[]>('/api/reviews');
 	return { reviews: data, loading };
 };

@@ -1,17 +1,17 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-
 import { Section } from 'components/layouts/section';
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
 import { Link } from 'components/ui/link';
 
-import { Props } from './props';
 import styles from './travel-with-us.module.scss';
+
+import type { FC } from 'react';
 
 const cx = classNames.bind(styles);
 
-export const TravelWithUs = ({}: Props) => {
+export const TravelWithUs: FC<unknown> = () => {
 	return (
 		<Section className={cx('travel-with-us')} contentClassName={cx('travel-with-us__content')}>
 			<img

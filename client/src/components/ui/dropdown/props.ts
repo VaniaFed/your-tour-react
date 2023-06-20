@@ -1,7 +1,7 @@
-import { FocusEvent } from 'react';
-import { DropdownItem } from 'types';
+import type { FocusEvent } from 'react';
+import type { DropdownItem } from 'types';
 
-export type Props = {
+export interface Props {
 	dropdownItems: DropdownItem[];
 	value: string;
 	name: string;
@@ -10,4 +10,4 @@ export type Props = {
 	className?: string;
 	onChange?: (val: string) => void;
 	onBlur?: (e: FocusEvent) => void;
-};
+}

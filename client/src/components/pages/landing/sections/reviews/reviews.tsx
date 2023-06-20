@@ -1,17 +1,18 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-
 import { Section } from 'components/layouts/section';
 import { CardLayout } from 'components/layouts/card-layout';
 import { CardReview } from 'components/ui/card-review';
-
 import { getReviews } from 'services/get-reviews';
-import { Props } from './props';
+
 import styles from './reviews.module.scss';
+
+import type { FC } from 'react';
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const Reviews = ({ className }: Props) => {
+export const Reviews: FC<Props> = ({ className }) => {
 	const { reviews } = getReviews();
 
 	return (

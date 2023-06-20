@@ -1,4 +1,4 @@
-export type Props = {
+export interface Props {
 	children: React.ReactNode;
 	withContainer?: boolean;
 	heading?: string;
@@ -7,4 +7,4 @@ export type Props = {
 	className?: string;
 	headingClassName?: string;
 	contentClassName?: string;
-};
+}

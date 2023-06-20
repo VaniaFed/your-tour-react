@@ -1,7 +1,13 @@
-import { UseAxios } from 'hooks/use-axios';
-import { Trip } from 'types';
+import { useAxios } from 'hooks/use-axios';
 
-export const getTripsByCategory = (category: string) => {
-	const { data, loading } = UseAxios<Trip[]>(`/api/trips/${category}`);
+import type { Trip } from 'types';
+
+export const getTripsByCategory = (
+	category: string
+): {
+	trips: Trip[] | undefined;
+	loading: boolean;
+} => {
+	const { data, loading } = useAxios<Trip[]>(`/api/trips/${category}`);
 	return { trips: data, loading };
 };

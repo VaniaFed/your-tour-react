@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-
 import { LinksLayout } from 'components/layouts/links-layout';
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
@@ -8,11 +7,13 @@ import { Button } from 'components/ui/button';
 import { Link } from 'components/ui/link';
 
 import styles from './card-large.module.scss';
-import { Props } from './props';
+
+import type { Props } from './props';
+import type { FC } from 'react';
 
 const cx = classNames.bind(styles);
 
-export const CardLarge = ({ heading, paragraph, imgSrc, listItems = [], links = [], className }: Props) => {
+export const CardLarge: FC<Props> = ({ heading, paragraph, imgSrc, listItems = [], links = [], className }) => {
 	return (
 		<div className={cx('card-large', className)}>
 			<img
@@ -37,7 +38,7 @@ export const CardLarge = ({ heading, paragraph, imgSrc, listItems = [], links = 
 			</div>
 			<div className={cx('card-large__bottom')}>
 				<Button variant="more">Подробнее</Button>
-				{links.length && (
+				{links.length !== 0 && (
 					<LinksLayout className={cx('card-large__links')} gap="35">
 						{links.map((link, key) => (
 							<li key={key}>

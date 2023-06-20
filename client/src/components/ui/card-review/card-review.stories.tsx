@@ -1,13 +1,16 @@
 import React from 'react';
-import { Meta, ComponentStory } from '@storybook/react';
 
 import { CardReview } from './card-review';
-import { Props } from './props';
 
-export default {
+import type { Meta, ComponentStory } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'CardReview',
 	component: CardReview,
-} as Meta;
+};
+
+export default meta;
 
 export const Default: ComponentStory<typeof CardReview> = (args: Props) => <CardReview {...args} />;
 Default.args = {

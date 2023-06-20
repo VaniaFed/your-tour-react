@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-
-import { BoxContainer } from 'components/layouts/box-container';
 import { Section } from 'components/layouts/section';
 import { Tabs } from 'components/ui/tabs';
 import { CardSmall } from 'components/ui/card-small';
 import { CardLayout } from 'components/layouts/card-layout';
+import { getTripsByCategory } from 'services/get-trips-by-category';
 
 import { tabs } from './data';
-import { Props } from './props';
 import styles from './choose-tour.module.scss';
-import { getTripsByCategory } from 'services/get-trips-by-category';
+
+import type { FC } from 'react';
 
 const cx = classNames.bind(styles);
 
-export const ChooseTour = ({ className }: Props) => {
+export const ChooseTour: FC<unknown> = () => {
 	const defaultCategory = 'Популярные';
 	const [category, setCategory] = useState(defaultCategory);
 	const { trips } = getTripsByCategory(category);

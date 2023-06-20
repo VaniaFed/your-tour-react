@@ -1,15 +1,16 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-
 import { BoxContainer } from 'components/layouts/box-container';
 import { LinksLayout } from 'components/layouts/links-layout';
 import { Logo } from 'components/ui/logo';
 import { Link } from 'components/ui/link';
+import { useSticky } from 'hooks/use-sticky';
 
-import { Link as TLink } from 'types';
-import { Props } from './props';
 import styles from './header.module.scss';
-import { UseSticky } from 'hooks/use-sticky';
+
+import type { FC } from 'react';
+import type { Link as TLink } from 'types';
+import type { Props } from './props';
 
 const links: TLink[] = [
 	{
@@ -32,9 +33,8 @@ const links: TLink[] = [
 
 const cx = classNames.bind(styles);
 
-export const Header = ({ className }: Props) => {
-	const { stickyRef, isSticky } = UseSticky(false, 200);
-
+export const Header: FC<Props> = ({ className }) => {
+	const { stickyRef, isSticky } = useSticky(false, 200);
 	return (
 		<header className={cx('header', isSticky && 'header_sticky', className)} ref={stickyRef}>
 			<BoxContainer size="1168" className={cx('header__container')}>

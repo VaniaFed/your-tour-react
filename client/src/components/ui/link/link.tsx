@@ -1,13 +1,15 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-
-import { Props } from './props';
-import styles from './link.module.scss';
 import { NavHashLink } from 'react-router-hash-link';
+
+import styles from './link.module.scss';
+
+import type { Props } from './props';
+import type { FC } from 'react';
 
 const cx = classNames.bind(styles);
 
-export const Link = ({
+export const Link: FC<Props> = ({
 	isExternal = false,
 	smooth = false,
 	children,
@@ -18,7 +20,7 @@ export const Link = ({
 	iconType,
 	className,
 	...rest
-}: Props) => {
+}) => {
 	const linkClass = cx(
 		'link',
 		`link_level_${level}`,
@@ -30,7 +32,7 @@ export const Link = ({
 	return (
 		<>
 			{isExternal ? (
-				<a className={linkClass} href={href} {...rest}>
+				<a className={linkClass} href={href} target="_blank" rel="noopener noreferrer" {...rest}>
 					{children}
 				</a>
 			) : (

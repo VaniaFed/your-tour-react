@@ -1,15 +1,19 @@
 import React from 'react';
-import { Meta, ComponentStory } from '@storybook/react';
-
+import { withRouter } from 'storybook-addon-react-router-v6';
 import { CardSmall } from 'components/ui/card-small';
 
 import { CardLayout } from './card-layout';
-import { Props } from './props';
 
-export default {
+import type { Meta, ComponentStory } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'CardLayout',
 	component: CardLayout,
-} as Meta;
+	decorators: [withRouter],
+};
+
+export default meta;
 
 const cards = [
 	{
@@ -44,8 +48,8 @@ const cards = [
 	},
 ];
 
-const cardList = cards.map((card) => (
-	<CardSmall heading={card.heading} subtitle={card.subtitle} imgSrc={card.imgSrc} link="#" />
+const cardList = cards.map((card, key) => (
+	<CardSmall heading={card.heading} subtitle={card.subtitle} imgSrc={card.imgSrc} link="#" key={key} />
 ));
 
 export const Default: ComponentStory<typeof CardLayout> = (args: Props) => <CardLayout {...args} />;
@@ -53,4 +57,13 @@ export const Default: ComponentStory<typeof CardLayout> = (args: Props) => <Card
 Default.args = {
 	children: cardList,
 	className: '',
+};
+Default.story = {
+	parameters: {
+		reactRouter: {
+			routePath: '/trips/:tripId',
+			routeParams: { tripId: '42' },
+			routeHandle: 'Trip',
+		},
+	},
 };

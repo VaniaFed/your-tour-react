@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const tripsService = require("../services").tripsService;
+const { TripService } = require("../services");
 
 router.get("/trips/:category", async (req, res) => {
-	await tripsService.getTripsByCategory(req, res);
+	await TripService.getByCategory(req, res);
 });
 
 router.get("/trip/:id", async (req, res) => {
-	await tripsService.getTripById(req, res);
+	await TripService.getById(req, res);
 });
 
 module.exports = router;

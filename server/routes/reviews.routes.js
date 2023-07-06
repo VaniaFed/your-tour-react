@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const reviewsService = require("../services").reviewsService;
+const { ReviewService } = require("../services");
 
 router.get("/reviews", async (req, res) => {
-	await reviewsService.getReviews(req, res);
+	await ReviewService.getAll(req, res);
 });
 
 module.exports = router;

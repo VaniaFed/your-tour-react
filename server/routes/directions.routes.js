@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const directionsService = require("../services").directionsService;
+const { DirectionService } = require("../services");
 
 router.get("/directions", async (req, res) => {
-	await directionsService.getDirections(req, res);
+	await DirectionService.getAll(req, res);
 });
 
 module.exports = router;

@@ -1,14 +1,14 @@
-require("./connect-mongo").connect();
-const tripsService = require("./trips");
-const directionsService = require("./directions");
-const reviewsService = require("./reviews");
-const userPhotosService = require("./user-photos");
-const storiesService = require("./stories");
+require("../helpers/connect-mongo").connect();
+const TripService = require("./trip-service");
+const DirectionService = require("./direction-service");
+const ReviewService = require("./review-service");
+const PhotoService = require("./user-photos");
+const StoryService = require("./story-service");
 
 module.exports = {
-	tripsService,
-	directionsService,
-	reviewsService,
-	userPhotosService,
-	storiesService,
+	TripService,
+	DirectionService,
+	ReviewService,
+	PhotoService,
+	StoryService,
 };

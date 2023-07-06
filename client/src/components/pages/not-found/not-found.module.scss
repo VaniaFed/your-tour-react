@@ -8,6 +8,10 @@
 	height: calc(100vh - 88px - 135px - 90px);
 	text-align: center;
 
+	@include media-mobile {
+		height: calc(100vh - 88px - 75px - 97px);
+	}
+
 	&__content {
 		display: flex;
 		flex-direction: column;

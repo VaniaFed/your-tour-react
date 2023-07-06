@@ -4,7 +4,7 @@ import { Section } from 'components/layouts/section';
 import { Tabs } from 'components/ui/tabs';
 import { CardSmall } from 'components/ui/card-small';
 import { CardLayout } from 'components/layouts/card-layout';
-import { getTripsByCategory } from 'services/get-trips-by-category';
+import { TripService } from 'services/trip-service';
 
 import { tabs } from './data';
 import styles from './choose-tour.module.scss';
@@ -16,7 +16,7 @@ const cx = classNames.bind(styles);
 export const ChooseTour: FC<unknown> = () => {
 	const defaultCategory = 'Популярные';
 	const [category, setCategory] = useState(defaultCategory);
-	const { trips } = getTripsByCategory(category);
+	const { trips } = TripService.getByCategory(category);
 
 	return (
 		<Section

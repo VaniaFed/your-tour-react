@@ -8,7 +8,7 @@ import { Link } from 'components/ui/link';
 import { Paragraph } from 'components/ui/paragraph';
 import { useAxios } from 'hooks/use-axios';
 
-import { UseBuildTourForm } from './use-build-tour-form';
+import { useBuildTourForm } from './use-build-tour-form';
 import { clearState, radioItems } from './data';
 import styles from './build-tour-form.module.scss';
 import { Row } from './row';
@@ -21,10 +21,9 @@ const cx = classNames.bind(styles);
 
 export const BuildTourForm: FC<Props> = ({ className, onSubmit = () => {} }) => {
 	const { data: dropdownItems } = useAxios<DropdownItem[]>('/api/directions');
-	const { formData, isFormValid, handlers } = UseBuildTourForm(clearState, onSubmit);
+	const { formData, isFormValid, handlers } = useBuildTourForm(clearState, onSubmit);
 	const { onChangeInput, onChangeDropdown, onSubmit: handleSubmit, onClear } = handlers;
 	const { name, direction, email, phone, dateFrom, dateTo, comment, isAdult, isAgreed } = formData;
-
 	return (
 		<form className={cx('build-tour-form', className)} onSubmit={handleSubmit}>
 			<Row>

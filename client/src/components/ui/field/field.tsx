@@ -96,3 +96,5 @@ export const Field: FC<Props> = ({
 		</div>
 	);
 };
+
+Field.displayName = 'Field';

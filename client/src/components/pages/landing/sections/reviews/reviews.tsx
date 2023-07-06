@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { Section } from 'components/layouts/section';
 import { CardLayout } from 'components/layouts/card-layout';
 import { CardReview } from 'components/ui/card-review';
-import { getReviews } from 'services/get-reviews';
+import { TripService } from 'services/trip-service';
 
 import styles from './reviews.module.scss';
 
@@ -13,8 +13,7 @@ import type { Props } from './props';
 const cx = classNames.bind(styles);
 
 export const Reviews: FC<Props> = ({ className }) => {
-	const { reviews } = getReviews();
-
+	const { reviews } = TripService.getReviews();
 	return (
 		<Section
 			id="reviews"

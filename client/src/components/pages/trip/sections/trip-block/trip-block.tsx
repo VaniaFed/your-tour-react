@@ -5,7 +5,7 @@ import { BoxContainer } from 'components/layouts/box-container';
 import { Section } from 'components/layouts/section';
 import { Paragraph } from 'components/ui/paragraph';
 import { Heading } from 'components/ui/heading';
-import { getTripById } from 'services/get-trip-by-id';
+import { TripService } from 'services/trip-service';
 
 import styles from './trip-block.module.scss';
 
@@ -20,7 +20,7 @@ interface TripParams {
 export const TripBlock: FC<unknown> = () => {
 	const { tripId } = useParams<keyof TripParams>() as TripParams;
 
-	const { trip, loading, error } = getTripById(tripId);
+	const { trip, loading, error } = TripService.getById(tripId);
 
 	const navigate = useNavigate();
 

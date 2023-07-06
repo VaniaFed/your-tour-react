@@ -2,12 +2,12 @@ import React from 'react';
 import { Section } from 'components/layouts/section';
 import { CardLayout } from 'components/layouts/card-layout';
 import { CardLarge } from 'components/ui/card-large';
-import { getStories } from 'services/get-stories';
+import { TripService } from 'services/trip-service';
 
 import type { FC } from 'react';
 
 export const Stories: FC<unknown> = () => {
-	const { stories } = getStories();
+	const { stories } = TripService.getStories();
 	return (
 		<Section
 			id="stories"

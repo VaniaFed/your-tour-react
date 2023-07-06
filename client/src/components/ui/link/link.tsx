@@ -9,18 +9,21 @@ import type { Props } from './props';
 const cx = classNames.bind(styles);
 
 export const Link = forwardRef<HTMLAnchorElement, Props>(
-	({
-		isExternal = false,
-		smooth = false,
-		children,
-		href = '#',
-		level = 'p-normal',
-		color = 'black',
-		underline = true,
-		iconType,
-		className,
-		...rest
-	}) => {
+	(
+		{
+			isExternal = false,
+			smooth = false,
+			children,
+			href = '#',
+			level = 'p-normal',
+			color = 'black',
+			underline = true,
+			iconType,
+			className,
+			...rest
+		},
+		ref
+	) => {
 		const linkClass = cx(
 			'link',
 			`link_level_${level}`,
@@ -32,11 +35,11 @@ export const Link = forwardRef<HTMLAnchorElement, Props>(
 		return (
 			<>
 				{isExternal ? (
-					<a className={linkClass} href={href} target="_blank" rel="noopener noreferrer" {...rest}>
+					<a className={linkClass} href={href} target="_blank" rel="noopener noreferrer" {...rest} ref={ref}>
 						{children}
 					</a>
 				) : (
-					<NavHashLink className={linkClass} to={href} smooth={smooth}>
+					<NavHashLink className={linkClass} to={href} smooth={smooth} ref={ref}>
 						{children}
 					</NavHashLink>
 				)}

@@ -1,7 +1,9 @@
-import React, { type FC } from 'react';
+import React from 'react';
 import bind from 'classnames/bind';
 
 import styles from './build-tour-form.module.scss';
+
+import type { FC } from 'react';
 
 const cx = bind.bind(styles);
 

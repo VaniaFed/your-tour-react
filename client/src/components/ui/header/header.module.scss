@@ -1,8 +1,16 @@
 @import 'utils/variables';
 @import 'utils/media';
 
+.header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+}
+
 .header_sticky {
-	position: fixed !important;
+	position: fixed;
 	background: rgba(#f3efe8, 0.6);
 	backdrop-filter: blur(10px);
 }

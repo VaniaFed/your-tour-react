@@ -1,14 +1,30 @@
-import { useState, useEffect, type ChangeEvent, type FormEvent } from 'react';
+import { useState, useEffect } from 'react';
 
-import { type BuildTourFields } from './build-tour-fields-interface';
 import { checkIfFormValid, validateField } from './validation';
 
-export const UseBuildTourForm = (clearState: BuildTourFields, onSubmit: (data: BuildTourFields) => void) => {
+import type { ChangeEvent, FormEvent } from 'react';
+import type { BuildTourFields } from './build-tour-fields-interface';
+
+interface FormHandlers {
+	onChangeInput: (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;
+	onChangeDropdown: (name: keyof BuildTourFields, value: string) => void;
+	onSubmit: (e: FormEvent) => void;
+	onClear: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+export const useBuildTourForm = (
+	clearState: BuildTourFields,
+	onSubmit: (formData: BuildTourFields) => void
+): {
+	formData: BuildTourFields;
+	isFormValid: boolean;
+	handlers: FormHandlers;
+} => {
 	const [formData, setFormData] = useState(clearState);
 	const [isFormValid, setIsFormValid] = useState(true);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
-	const updateInput = (name: keyof BuildTourFields, value: string | boolean) => {
+	const updateInput = (name: keyof BuildTourFields, value: string | boolean): void => {
 		setFormData({
 			...formData,
 			[name]: {
@@ -26,23 +42,23 @@ export const UseBuildTourForm = (clearState: BuildTourFields, onSubmit: (data: B
 		updateInput(name, value);
 	}
 
-	const changeDropdown = (name: keyof BuildTourFields, value: string) => {
+	const changeDropdown = (name: keyof BuildTourFields, value: string): void => {
 		updateInput(name, value);
 	};
 
-	const handleSubmit = (e: FormEvent) => {
+	const handleSubmit = (e: FormEvent): void => {
 		e.preventDefault();
 		setIsFormValid(checkIfFormValid(formData));
 		setIsSubmitted(true);
 	};
 
-	const clearForm = () => {
+	const clearForm = (): void => {
 		setFormData(clearState);
 		setIsFormValid(true);
 		setIsSubmitted(false);
 	};
 
-	const handleClear = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const handleClear = (e: React.MouseEvent<HTMLButtonElement>): void => {
 		e.preventDefault();
 		clearForm();
 	};

@@ -1,17 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
-
 import { Input } from 'components/ui/input';
+import { useDropdown } from 'hooks/use-dropdown';
 import chevron from 'static/ic-dropdown.svg';
 
 import { DropdownList } from './dropdown-list/';
-import { Props } from './props';
 import styles from './dropdown.module.scss';
-import { UseDropdown } from 'hooks/use-dropdown';
+
+import type { FC } from 'react';
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const Dropdown = ({
+export const Dropdown: FC<Props> = ({
 	dropdownItems,
 	value,
 	name,
@@ -20,8 +21,8 @@ export const Dropdown = ({
 	className,
 	onChange = () => {},
 	onBlur = () => {},
-}: Props) => {
-	const { isOpen, menuRef, openMenu, handleItemClick } = UseDropdown(onChange);
+}) => {
+	const { isOpen, menuRef, openMenu, handleItemClick } = useDropdown(onChange);
 
 	return (
 		<div className={cx('dropdown', className)}>
@@ -40,7 +41,7 @@ export const Dropdown = ({
 				/>
 				<img src={chevron} alt="open" className={cx('dropdown__chevron')} />
 			</div>
-			{isOpen && <DropdownList items={dropdownItems} onClick={handleItemClick} ref={menuRef!} />}
+			{isOpen && <DropdownList items={dropdownItems} onClick={handleItemClick} ref={menuRef} />}
 		</div>
 	);
 };

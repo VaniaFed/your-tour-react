@@ -1,11 +1,11 @@
-export { Trip } from './trip';
-export { Review } from './review';
-export { Story } from './story';
+export type { Trip } from './trip';
+export type { Review } from './review';
+export type { Story } from './story';
 
-export { Link } from './link';
-export { DropdownItem } from './dropdown-item';
+export type { Link } from './link';
+export type { DropdownItem } from './dropdown-item';
 
-export { Tab } from './tab';
-export { Social } from './social';
-export { InputType } from './input-type';
-export { Image } from './image';
+export type { Tab } from './tab';
+export type { Social } from './social';
+export type { InputType } from './input-type';
+export type { Image } from './image';

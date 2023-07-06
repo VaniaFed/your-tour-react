@@ -1,6 +1,6 @@
-import { IBuildTourFields } from './build-tour-fields-interface';
+import { type BuildTourFields } from './build-tour-fields-interface';
 
-export type Props = {
+export interface Props {
 	className?: string;
-	onSubmit: (formData: IBuildTourFields) => void;
-};
+	onSubmit: (formData: BuildTourFields) => void;
+}

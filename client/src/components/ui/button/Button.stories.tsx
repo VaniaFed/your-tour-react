@@ -1,15 +1,20 @@
 import React from 'react';
-import { ComponentStory, Meta } from '@storybook/react';
 
 import { Button } from './button';
-import { Props } from './props';
 
-export default {
+import type { ComponentStory, Meta } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'Button',
 	component: Button,
-} as Meta;
+};
 
-const logging = () => console.log('Hello, warlord');
+export default meta;
+
+const logging = (): void => {
+	console.log('Hello, warlord');
+};
 
 export const Primary: ComponentStory<typeof Button> = (args: Props) => (
 	<Button onClick={logging} {...args}>

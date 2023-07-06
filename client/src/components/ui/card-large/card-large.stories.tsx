@@ -1,13 +1,16 @@
 import React from 'react';
-import { Meta, ComponentStory } from '@storybook/react';
 
 import { CardLarge } from './card-large';
-import { Props } from './props';
 
-export default {
+import type { Meta, ComponentStory } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'CardLarge',
 	component: CardLarge,
-} as Meta;
+};
+
+export default meta;
 
 export const Default: ComponentStory<typeof CardLarge> = (args: Props) => <CardLarge {...args} />;
 Default.args = {

@@ -1,14 +1,16 @@
 import React from 'react';
-import { Meta, ComponentStory } from '@storybook/react';
 
-import { Props } from './props';
 import { Input } from './input';
 
-export default {
+import type { Meta, ComponentStory } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'Input',
 	component: Input,
-} as Meta;
+};
 
+export default meta;
 export const Default: ComponentStory<typeof Input> = (args: Props) => <Input {...args} />;
 Default.args = {
 	className: '',

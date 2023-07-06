@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import classNames from 'classnames/bind';
 
-import { Props } from './props';
 import styles from './input.module.scss';
+
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const Input = ({ isInvalid = true, className, ...rest }: Props) => {
-	return <input className={cx('input', isInvalid && 'input_invalid', className)} {...rest} />;
-};
+export const Input = forwardRef<HTMLInputElement, Props>(({ isInvalid = true, className, ...rest }, ref) => {
+	return <input className={cx('input', isInvalid && 'input_invalid', className)} {...rest} ref={ref} />;
+});
+
+Input.displayName = 'Input';

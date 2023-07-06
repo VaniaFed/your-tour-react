@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
 import { Button } from 'components/ui/button';
 
-import { Props } from './props';
 import styles from './card-small.module.scss';
-import { Link } from 'react-router-dom';
+
+import type { FC } from 'react';
+import type { Props } from './props';
 
 const cx = classNames.bind(styles);
 
-export const CardSmall = ({ heading, subtitle, imgSrc, className, link = '#' }: Props) => {
+export const CardSmall: FC<Props> = ({ heading, subtitle, imgSrc, className, link = '#' }) => {
 	return (
 		<div className={cx('card', className)}>
 			<img className={cx('card__image')} src={require(`${process.env.STATIC_URL}/${imgSrc}`)} alt={heading} />

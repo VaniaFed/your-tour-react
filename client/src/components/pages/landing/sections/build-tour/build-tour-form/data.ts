@@ -1,12 +1,13 @@
-import { IBuildTourFields } from './build-tour-fields-interface';
-import { RadioItemTypes } from 'components/ui/radio-group/props';
+import { type RadioItem } from 'components/ui/radio-group/props';
 
-export const radioItems: RadioItemTypes[] = [
+import { type BuildTourFields } from './build-tour-fields-interface';
+
+export const radioItems: RadioItem[] = [
 	{ label: 'Да', value: 'да' },
 	{ label: 'Нет', value: 'нет' },
 ];
 
-export const clearState: IBuildTourFields = {
+export const clearState: BuildTourFields = {
 	name: {
 		value: '',
 		isValid: false,

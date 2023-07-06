@@ -1,4 +1,4 @@
-import { Link } from './link';
+import type { Link } from './link';
 
 export interface Story {
 	tripName: string;

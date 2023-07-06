@@ -1,13 +1,18 @@
 import React from 'react';
-import { ComponentStory, Meta } from '@storybook/react';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import { Link } from './link';
-import { Props } from './props';
 
-export default {
+import type { ComponentStory, Meta } from '@storybook/react';
+import type { Props } from './props';
+
+const meta: Meta = {
 	title: 'Link',
 	component: Link,
-} as Meta;
+	decorators: [withRouter],
+};
+
+export default meta;
 
 export const Default: ComponentStory<typeof Link> = (args: Props) => <Link href="#">Default link</Link>;
 export const H1: ComponentStory<typeof Link> = (args: Props) => (
@@ -64,7 +69,7 @@ export const WithIconVK: ComponentStory<typeof Link> = (args: Props) => <Link ic
 export const WithIconINST: ComponentStory<typeof Link> = (args: Props) => <Link iconType="inst" {...args} />;
 export const WithIconFB: ComponentStory<typeof Link> = (args: Props) => <Link iconType="fb" {...args} />;
 
-export const VK_With_Text: ComponentStory<typeof Link> = (args: Props) => (
+export const VKWithText: ComponentStory<typeof Link> = (args: Props) => (
 	<Link iconType="vk" {...args}>
 		VK
 	</Link>

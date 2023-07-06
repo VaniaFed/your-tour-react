@@ -1,7 +1,7 @@
-import { ChangeEvent, ReactNode } from 'react';
-import { DropdownItem, InputType } from 'types';
+import type { ChangeEvent, ReactNode } from 'react';
+import type { DropdownItem, InputType } from 'types';
 
-export type Props = {
+export interface Props {
 	label?: string;
 	placeholder?: string;
 	type?: InputType;
@@ -14,4 +14,4 @@ export type Props = {
 	errorText?: string;
 	className?: any;
 	onChange?: (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;
-};
+}

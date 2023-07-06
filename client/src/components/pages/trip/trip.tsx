@@ -1,6 +1,9 @@
 import React from 'react';
+
 import { TripBlock } from './sections/trip-block';
 
-export const Trip = () => {
+import type { FC } from 'react';
+
+export const Trip: FC<unknown> = () => {
 	return <TripBlock />;
 };

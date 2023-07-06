@@ -1,6 +1,6 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { TextareaHTMLAttributes } from 'react';
 
-export interface Props extends ComponentPropsWithoutRef<'textarea'> {
+export interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 	isInvalid: boolean;
 	className?: string;
 }

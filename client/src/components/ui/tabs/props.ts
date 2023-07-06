@@ -1,8 +1,8 @@
-import { Tab } from 'types';
+import type { Tab } from 'types';
 
-export type Props = {
+export interface Props {
 	elements: Tab[];
 	value?: string;
 	className?: string;
 	onChange?: (label: string) => void;
-};
+}

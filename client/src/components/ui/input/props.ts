@@ -1,6 +1,5 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-export interface Props extends ComponentPropsWithoutRef<'input'> {
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	isInvalid?: boolean;
-	className?: string;
 }

@@ -1,6 +1,5 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 
-export interface Props extends ComponentPropsWithoutRef<'button'> {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: 'primary' | 'secondary' | 'more' | 'small';
-	className?: string;
 }

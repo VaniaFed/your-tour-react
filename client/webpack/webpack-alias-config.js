@@ -3,10 +3,9 @@ const path = require('path');
 module.exports = {
 	resolve: {
 		alias: {
-			components: path.resolve(__dirname, '../src/components/'),
-			containers: path.resolve(__dirname, '../src/containers/'),
-			hooks: path.resolve(__dirname, '../src/hooks/'),
 			src: path.resolve(__dirname, '../src/'),
+			components: path.resolve(__dirname, '../src/components/'),
+			hooks: path.resolve(__dirname, '../src/hooks/'),
 			static: path.resolve(__dirname, '../src/static/'),
 			actions: path.resolve(__dirname, '../src/actions'),
 			reducers: path.resolve(__dirname, '../src/reducers/'),

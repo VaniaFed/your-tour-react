@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"typeRoots": ["./node_modules/@types"],
 		"outDir": "./dist",
 		"target": "es5",
 		"module": "ESNext",
@@ -27,6 +28,6 @@
 			"constants.ts": ["./src/constants.ts"]
 		}
 	},
-	"exclude": ["node_modules", "**/node_modules/*", ".stylelintrc", "*.stories.ts?"],
+	"exclude": ["node_modules", "**/node_modules/*", ".stylelintrc.js", "*.stories.ts?"],
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "./declaration.d.ts", "./custom.d.ts"]
 }

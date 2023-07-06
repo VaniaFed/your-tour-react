@@ -1,10 +1,10 @@
-import { Link } from 'types';
+import type { Link } from 'types';
 
-export type Props = {
+export interface Props {
 	heading: string;
 	paragraph: string;
 	listItems?: string[];
 	imgSrc: string;
 	links?: Link[];
 	className?: string;
-};
+}

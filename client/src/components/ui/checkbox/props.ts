@@ -1,5 +1,3 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-export interface Props extends ComponentPropsWithoutRef<'input'> {
-	children: React.ReactNode;
-}
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {}

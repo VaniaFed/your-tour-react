@@ -9,13 +9,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 8px;
-	height: 88px;
 	padding: 30px 1px;
 
 	@include media-tablet {
 		flex-direction: column;
+		gap: 6px;
 		height: auto;
+	}
+
+	@include media-mobile {
+		padding: 21px 1px;
 	}
 }
 

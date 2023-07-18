@@ -6,6 +6,8 @@
 		"module": "ESNext",
 		"jsx": "react",
 		"noImplicitAny": true,
+		"skipLibCheck": true,
+		"pretty": true,
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": "./src/",
 		"moduleResolution": "Node",
@@ -28,6 +30,6 @@
 			"constants.ts": ["./src/constants.ts"]
 		}
 	},
-	"exclude": ["node_modules", "**/node_modules/*", ".stylelintrc.js", "*.stories.ts?"],
+	"exclude": ["node_modules", "**/node_modules/*", ".stylelintrc", "*.stories.ts?"],
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "./declaration.d.ts", "./custom.d.ts"]
 }

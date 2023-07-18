@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+
+import { StickyContext } from '../../../providers/sticky-provider';
 
 import { FirstScreen } from './sections/first-screen';
 import { ChooseTour } from './sections/choose-tour';
@@ -11,6 +13,11 @@ import { TravelWithUs } from './sections/travel-with-us';
 import type { FC } from 'react';
 
 export const Landing: FC<unknown> = () => {
+	const { setSticky } = useContext(StickyContext);
+	useEffect(() => {
+		setSticky(true);
+	}, []);
+
 	return (
 		<>
 			<FirstScreen />

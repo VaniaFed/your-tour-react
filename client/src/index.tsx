@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import * as ReactDOM from 'react-dom/client';
 import { App } from 'components/app';
+import ScrollToHashElement from 'hooks/scroll-to-hash-element';
 
 import { StickyProvider } from './providers/sticky-provider';
 
@@ -14,6 +15,7 @@ root.render(
 		<BrowserRouter>
 			<StickyProvider>
 				<App />
+				<ScrollToHashElement />
 			</StickyProvider>
 		</BrowserRouter>
 	</React.StrictMode>

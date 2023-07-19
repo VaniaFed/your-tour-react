@@ -32,7 +32,7 @@ export const TripBlock: FC<unknown> = () => {
 
 	let image;
 	if (trip) {
-		image = encodeURI(require(process.env.STATIC_URL + '/' + trip.imgSrc));
+		image = encodeURI(require(STATIC_URL + '/' + trip.imgSrc));
 	}
 
 	return (

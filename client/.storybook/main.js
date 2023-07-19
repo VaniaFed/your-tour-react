@@ -50,7 +50,7 @@ module.exports = {
 
 		config.plugins.push(
 			new webpack.DefinePlugin({
-				'process.env.STATIC_URL': JSON.stringify(path.resolve(__dirname, '..', 'src', 'static')),
+				'STATIC_URL': JSON.stringify(path.resolve(__dirname, '..', 'src', 'static')),
 			})
 		);
 		config.resolve.alias = {

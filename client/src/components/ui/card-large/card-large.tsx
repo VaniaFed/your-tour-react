@@ -17,7 +17,7 @@ export const CardLarge: FC<Props> = ({ heading, paragraph, imgSrc, listItems = [
 	return (
 		<div className={cx('card-large', className)}>
 			<img
-				src={require(`${process.env.STATIC_URL}/${imgSrc}`)}
+				src={require(`${STATIC_URL}/${imgSrc}`)}
 				className={cx('card-large__image')}
 				alt={heading}
 			/>

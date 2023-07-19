@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
-import { Button } from 'components/ui/Button';
+import { Button } from 'components/ui/button';
 
 import styles from './card-small.module.scss';
 

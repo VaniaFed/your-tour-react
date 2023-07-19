@@ -4,7 +4,7 @@ import { BoxContainer } from 'components/layouts/box-container';
 import { Heading } from 'components/ui/heading';
 import { Link } from 'components/ui/link';
 import { Paragraph } from 'components/ui/paragraph';
-import { Button } from 'components/ui/Button';
+import { Button } from 'components/ui/button';
 
 import styles from './first-screen.module.scss';
 

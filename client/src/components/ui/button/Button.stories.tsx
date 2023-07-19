@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from './Button';
+import { Button } from './button';
 
 import type { ComponentStory, Meta } from '@storybook/react';
 import type { Props } from './props';

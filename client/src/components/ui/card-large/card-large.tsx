@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { LinksLayout } from 'components/layouts/links-layout';
 import { Heading } from 'components/ui/heading';
 import { Paragraph } from 'components/ui/paragraph';
-import { Button } from 'components/ui/button';
+import { Button } from 'components/ui/Button';
 import { Link } from 'components/ui/link';
 
 import styles from './card-large.module.scss';

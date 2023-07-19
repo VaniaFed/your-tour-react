@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { Input } from 'components/ui/input';
+import { Input } from 'components/ui/Input';
 import { useDropdown } from 'hooks/use-dropdown';
 import chevron from 'static/ic-dropdown.svg';
 

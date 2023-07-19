@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { Dropdown } from 'components/ui/dropdown';
 import { Textarea } from 'components/ui/textarea';
-import { Input } from 'components/ui/input';
+import { Input } from 'components/ui/Input';
 
 import styles from './field.module.scss';
 

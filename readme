@@ -1,3 +1,0 @@
-для запуска проекта:
-	1. запускаем react-сервер npm run start
-	2. mocked-сервер npm run server:start

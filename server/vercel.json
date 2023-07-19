@@ -1,11 +1,5 @@
 {
   "builds": [
     { "src": "*.js", "use": "@vercel/node" }
-  ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://www.your-tour-react-api.vercel.app/"
-    }
   ]
 }

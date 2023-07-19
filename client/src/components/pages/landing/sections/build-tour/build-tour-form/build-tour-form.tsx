@@ -20,7 +20,7 @@ import type { Props } from './props';
 const cx = classNames.bind(styles);
 
 export const BuildTourForm: FC<Props> = ({ className, onSubmit = () => {} }) => {
-	const { data: dropdownItems } = useAxios<DropdownItem[]>('/api/directions');
+	const { data: dropdownItems } = useAxios<DropdownItem[]>('https://your-tour-react-api.vercel.app/api/directions');
 	const { formData, isFormValid, handlers } = useBuildTourForm(clearState, onSubmit);
 	const { onChangeInput, onChangeDropdown, onSubmit: handleSubmit, onClear } = handlers;
 	const { name, direction, email, phone, dateFrom, dateTo, comment, isAdult, isAgreed } = formData;

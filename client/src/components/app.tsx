@@ -20,5 +20,3 @@ export const App: FC<unknown> = () => {
 		</Routes>
 	);
 };
-
-console.log('trigger redeploy');

@@ -22,7 +22,7 @@ export const Gallery: FC<Props> = ({ className }) => {
 				{photos?.map((img, key) => (
 					<li className={cx('gallery__item')} key={key}>
 						<img
-							src={require(`${STATIC_URL}/${img.src}`)}
+							src={require(`${process.env.STATIC_URL}/${img.src}`)}
 							alt={img.title}
 							className={cx('gallery__pic')}
 							key={key}

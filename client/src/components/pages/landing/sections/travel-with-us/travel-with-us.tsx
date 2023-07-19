@@ -15,7 +15,7 @@ export const TravelWithUs: FC<unknown> = () => {
 	return (
 		<Section className={cx('travel-with-us')} contentClassName={cx('travel-with-us__content')}>
 			<img
-				src={require(`${STATIC_URL}/Travel with us/footer photo.jpg`)}
+				src={require(`${process.env.STATIC_URL}/Travel with us/footer photo.jpg`)}
 				alt="Travel With us"
 				className={cx('travel-with-us__image')}
 			/>

@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 export const CardSmall: FC<Props> = ({ heading, subtitle, imgSrc, className, link = '#' }) => {
 	return (
 		<div className={cx('card', className)}>
-			<img className={cx('card__image')} src={require(`${STATIC_URL}/${imgSrc}`)} alt={heading} />
+			<img className={cx('card__image')} src={require(`${process.env.STATIC_URL}/${imgSrc}`)} alt={heading} />
 			<div>
 				<Heading size="3" className={cx('card__heading')}>
 					{heading}

@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 export const Avatar: FC<Props> = ({ src = '', alt = 'Аватар', className, ...rest }) => {
 	return (
 		<img
-			src={require(`${STATIC_URL}/${src}`)}
+			src={require(`${process.env.STATIC_URL}/${src}`)}
 			className={cx('avatar', className)}
 			alt={alt}
 			{...rest}

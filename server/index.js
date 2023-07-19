@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
 	cors({
-		origin: "https://your-tour-react.vercel.app",
+		origin: "https://your-tour-react-mjmj.vercel.app",
 	})
 );
 

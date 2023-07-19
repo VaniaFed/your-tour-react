@@ -5,7 +5,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "http://www.your-tour-react-api.vercel.app"
+      "destination": "https://www.your-tour-react-api.vercel.app/"
     }
   ]
 }
